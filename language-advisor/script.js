@@ -115,6 +115,7 @@ const LANGUAGES = [
     tagline: "Reads almost like English. The default choice for beginners, data, and AI.",
     difficulty: "Beginner",
     tags: ["web", "data", "ai", "automation", "beginner-friendly"],
+    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
     resources: [
       { label: "Official docs & tutorial", type: "Docs", url: "https://docs.python.org/3/tutorial/" },
       { label: "freeCodeCamp: Scientific Computing with Python", type: "Free course", url: "https://www.freecodecamp.org/learn/scientific-computing-with-python/" },
@@ -129,6 +130,7 @@ const LANGUAGES = [
     tagline: "The language of the web. Runs in every browser and, via Node.js, on servers too.",
     difficulty: "Beginner",
     tags: ["web", "beginner-friendly", "career"],
+    example: `<span class="code-fn">console</span>.<span class="code-fn">log</span>(<span class="code-str">"Hello, World!"</span>);`,
     resources: [
       { label: "MDN JavaScript guide", type: "Docs", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
       { label: "javascript.info — modern tutorial", type: "Free course", url: "https://javascript.info/" },
@@ -143,6 +145,9 @@ const LANGUAGES = [
     tagline: "JavaScript with a safety net — adds types that catch bugs before you run the code.",
     difficulty: "Moderate",
     tags: ["web", "career"],
+    example: `<span class="code-kw">function</span> <span class="code-fn">greet</span>(name: <span class="code-kw">string</span>): <span class="code-kw">string</span> {
+  <span class="code-kw">return</span> <span class="code-str">"Hello, " + name</span>;
+}`,
     resources: [
       { label: "Official TypeScript handbook", type: "Docs", url: "https://www.typescriptlang.org/docs/handbook/intro.html" },
       { label: "TypeScript docs — full site", type: "Docs", url: "https://www.typescriptlang.org/docs/" },
@@ -157,6 +162,11 @@ const LANGUAGES = [
     tagline: "Verbose but rock-solid. Runs banks, Android apps, and half the enterprise world.",
     difficulty: "Moderate",
     tags: ["mobile", "career", "enterprise"],
+    example: `<span class="code-kw">public class</span> <span class="code-fn">Main</span> {
+    <span class="code-kw">public static void</span> <span class="code-fn">main</span>(String[] args) {
+        System.out.<span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>);
+    }
+}`,
     resources: [
       { label: "dev.java — official learning path", type: "Docs", url: "https://dev.java/learn/" },
       { label: "Oracle Java documentation", type: "Docs", url: "https://docs.oracle.com/en/java/" },
@@ -171,6 +181,7 @@ const LANGUAGES = [
     tagline: "Microsoft's flagship language — game dev with Unity, desktop apps, and enterprise backends.",
     difficulty: "Moderate",
     tags: ["games", "desktop", "career", "enterprise"],
+    example: `Console.<span class="code-fn">WriteLine</span>(<span class="code-str">"Hello, World!"</span>);`,
     resources: [
       { label: "Microsoft Learn: C# first steps", type: "Free course", url: "https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/" },
       { label: "Official C# documentation", type: "Docs", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
@@ -185,6 +196,10 @@ const LANGUAGES = [
     tagline: "Maximum control and speed. Powers game engines, browsers, and performance-critical systems.",
     difficulty: "Steep",
     tags: ["games", "systems", "performance"],
+    example: `#include &lt;iostream&gt;
+<span class="code-kw">int</span> <span class="code-fn">main</span>() {
+    std::cout &lt;&lt; <span class="code-str">"Hello, World!"</span>;
+}`,
     resources: [
       { label: "learncpp.com — full free course", type: "Free course", url: "https://www.learncpp.com/" },
       { label: "cppreference — the language reference", type: "Docs", url: "https://en.cppreference.com/" },
@@ -199,6 +214,10 @@ const LANGUAGES = [
     tagline: "The bedrock of modern computing. Understand C and you understand how computers actually work.",
     difficulty: "Steep",
     tags: ["systems", "performance"],
+    example: `#include &lt;stdio.h&gt;
+<span class="code-kw">int</span> <span class="code-fn">main</span>() {
+    <span class="code-fn">printf</span>(<span class="code-str">"Hello, World!"</span>);
+}`,
     resources: [
       { label: "Learn-C.org — interactive tutorial", type: "Free course", url: "https://www.learn-c.org/" },
       { label: "Beej's Guide to C Programming", type: "Free course", url: "https://beej.us/guide/bgc/" },
@@ -213,6 +232,11 @@ const LANGUAGES = [
     tagline: "Simple syntax, built-in concurrency, fast compiles. A favorite for backend and cloud infrastructure.",
     difficulty: "Moderate",
     tags: ["web", "systems", "career"],
+    example: `package main
+import <span class="code-str">"fmt"</span>
+<span class="code-kw">func</span> <span class="code-fn">main</span>() {
+    fmt.<span class="code-fn">Println</span>(<span class="code-str">"Hello, World!"</span>)
+}`,
     resources: [
       { label: "A Tour of Go — official interactive tour", type: "Interactive course", url: "https://go.dev/tour/welcome/1" },
       { label: "Official Go documentation", type: "Docs", url: "https://go.dev/doc/" },
@@ -227,6 +251,9 @@ const LANGUAGES = [
     tagline: "C++-level performance with a compiler that refuses to let you write memory-unsafe code.",
     difficulty: "Steep",
     tags: ["systems", "performance", "career"],
+    example: `<span class="code-kw">fn</span> <span class="code-fn">main</span>() {
+    <span class="code-fn">println!</span>(<span class="code-str">"Hello, World!"</span>);
+}`,
     resources: [
       { label: "The Rust Book — official free book", type: "Free course", url: "https://doc.rust-lang.org/book/" },
       { label: "Rust by Example", type: "Free course", url: "https://doc.rust-lang.org/rust-by-example/" },
@@ -241,6 +268,7 @@ const LANGUAGES = [
     tagline: "Apple's language for building iOS, iPadOS, and macOS apps.",
     difficulty: "Moderate",
     tags: ["mobile", "career"],
+    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
     resources: [
       { label: "100 Days of SwiftUI (free)", type: "Free course", url: "https://www.hackingwithswift.com/100" },
       { label: "Official Swift documentation", type: "Docs", url: "https://www.swift.org/documentation/" },
@@ -255,6 +283,9 @@ const LANGUAGES = [
     tagline: "The modern, official language for Android development. Also runs anywhere Java does.",
     difficulty: "Moderate",
     tags: ["mobile", "career"],
+    example: `<span class="code-kw">fun</span> <span class="code-fn">main</span>() {
+    <span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>)
+}`,
     resources: [
       { label: "Kotlin official docs & getting started", type: "Docs", url: "https://kotlinlang.org/docs/getting-started.html" },
       { label: "kotlinlang.org — full documentation", type: "Docs", url: "https://kotlinlang.org/docs/home.html" },
@@ -269,6 +300,9 @@ const LANGUAGES = [
     tagline: "Google's language + framework for building one app that runs on iOS, Android, web, and desktop.",
     difficulty: "Moderate",
     tags: ["mobile", "web"],
+    example: `<span class="code-kw">void</span> <span class="code-fn">main</span>() {
+  <span class="code-fn">print</span>(<span class="code-str">'Hello, World!'</span>);
+}`,
     resources: [
       { label: "Official Dart guides", type: "Docs", url: "https://dart.dev/guides" },
       { label: "Flutter — learn to build apps", type: "Free course", url: "https://flutter.dev/learn" },
@@ -283,6 +317,8 @@ const LANGUAGES = [
     tagline: "Powers a huge share of the web (including WordPress). Unglamorous, extremely employable.",
     difficulty: "Beginner",
     tags: ["web", "career"],
+    example: `&lt;?php
+<span class="code-fn">echo</span> <span class="code-str">"Hello, World!"</span>;`,
     resources: [
       { label: "Official PHP manual — getting started", type: "Docs", url: "https://www.php.net/manual/en/getting-started.php" },
       { label: "freeCodeCamp: The PHP Handbook", type: "Free course", url: "https://www.freecodecamp.org/news/the-php-handbook/" },
@@ -297,6 +333,7 @@ const LANGUAGES = [
     tagline: "Designed for programmer happiness. Clean syntax, and the backbone of the Ruby on Rails framework.",
     difficulty: "Beginner",
     tags: ["web", "beginner-friendly"],
+    example: `<span class="code-fn">puts</span> <span class="code-str">"Hello, World!"</span>`,
     resources: [
       { label: "Official Ruby documentation", type: "Docs", url: "https://www.ruby-lang.org/en/documentation/" },
       { label: "Codecademy: Learn Ruby", type: "Interactive course", url: "https://www.codecademy.com/learn/learn-ruby" },
@@ -311,6 +348,7 @@ const LANGUAGES = [
     tagline: "Not a general-purpose language, but essential: how you talk to almost every database.",
     difficulty: "Beginner",
     tags: ["data", "career"],
+    example: `<span class="code-kw">SELECT</span> <span class="code-str">'Hello, World!'</span>;`,
     resources: [
       { label: "SQLBolt — interactive lessons", type: "Interactive course", url: "https://sqlbolt.com/" },
       { label: "Khan Academy: Intro to SQL", type: "Free course", url: "https://www.khanacademy.org/computing/computer-programming/sql" },
@@ -325,6 +363,7 @@ const LANGUAGES = [
     tagline: "Built by and for statisticians. Deep roots in academia, research, and statistical analysis.",
     difficulty: "Moderate",
     tags: ["data", "ai"],
+    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
     resources: [
       { label: "R for Data Science (free book)", type: "Free course", url: "https://r4ds.hadley.nz/" },
       { label: "swirl — learn R interactively, in R", type: "Interactive course", url: "https://swirlstats.com/" },
@@ -339,6 +378,7 @@ const LANGUAGES = [
     tagline: "A tiny, fast scripting language embedded inside bigger programs — best known as how Roblox games are built.",
     difficulty: "Beginner",
     tags: ["games", "automation", "beginner-friendly"],
+    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
     resources: [
       { label: "Programming in Lua (free official book)", type: "Free course", url: "https://www.lua.org/pil/contents.html" },
       { label: "Learn X in Y minutes: Lua", type: "Docs", url: "https://learnxinyminutes.com/docs/lua/" },
@@ -354,6 +394,7 @@ const LANGUAGES = [
     tagline: "The scripting glue of every Unix system — a few lines here save you hours of repetitive manual work.",
     difficulty: "Beginner",
     tags: ["automation", "systems", "beginner-friendly"],
+    example: `<span class="code-fn">echo</span> <span class="code-str">"Hello, World!"</span>`,
     resources: [
       { label: "GNU Bash reference manual", type: "Docs", url: "https://www.gnu.org/software/bash/manual/bash.html" },
       { label: "Learn Shell — free interactive tutorial", type: "Interactive course", url: "https://www.learnshell.org/" },
@@ -368,6 +409,7 @@ const LANGUAGES = [
     tagline: "Java's JVM power meets functional programming — the language behind Spark and a lot of big-data infrastructure.",
     difficulty: "Steep",
     tags: ["data", "enterprise", "career"],
+    example: `<span class="code-kw">@main def</span> <span class="code-fn">hello</span>() = <span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>)`,
     resources: [
       { label: "Official Scala documentation", type: "Docs", url: "https://docs.scala-lang.org/" },
       { label: "Tour of Scala — interactive intro", type: "Interactive course", url: "https://docs.scala-lang.org/tour/tour-of-scala.html" },
@@ -382,6 +424,7 @@ const LANGUAGES = [
     tagline: "Built for systems that can't go down — a concurrent, fault-tolerant language behind Discord's real-time infrastructure.",
     difficulty: "Moderate",
     tags: ["web", "career"],
+    example: `IO.<span class="code-fn">puts</span>(<span class="code-str">"Hello, World!"</span>)`,
     resources: [
       { label: "Official Elixir getting-started guide", type: "Docs", url: "https://hexdocs.pm/elixir/introduction.html" },
       { label: "Elixir School — free lessons", type: "Free course", url: "https://elixirschool.com/" },
@@ -396,6 +439,7 @@ const LANGUAGES = [
     tagline: "Reads almost like Python, runs almost like C — built specifically for fast numerical and scientific computing.",
     difficulty: "Moderate",
     tags: ["data", "ai", "performance"],
+    example: `<span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>)`,
     resources: [
       { label: "Official Julia documentation", type: "Docs", url: "https://docs.julialang.org/" },
       { label: "Getting Started with Julia (official)", type: "Free course", url: "https://julialang.org/learning/getting-started/" },
@@ -410,6 +454,10 @@ const LANGUAGES = [
     tagline: "A modern, minimal alternative to C — full manual control over memory, without decades of historical baggage.",
     difficulty: "Steep",
     tags: ["systems", "performance"],
+    example: `<span class="code-kw">const</span> std = @import(<span class="code-str">"std"</span>);
+<span class="code-kw">pub fn</span> <span class="code-fn">main</span>() <span class="code-kw">void</span> {
+    std.debug.<span class="code-fn">print</span>(<span class="code-str">"Hello, World!\\n"</span>, .{});
+}`,
     resources: [
       { label: "Official Zig documentation", type: "Docs", url: "https://ziglang.org/documentation/master/" },
       { label: "ziglearn.org — free guide", type: "Free course", url: "https://ziglearn.org/" },
@@ -424,6 +472,10 @@ const LANGUAGES = [
     tagline: "The language of Ethereum smart contracts — code that moves real money, so mistakes are genuinely expensive.",
     difficulty: "Moderate",
     tags: ["career", "blockchain"],
+    example: `<span class="code-kw">pragma</span> solidity ^0.8.0;
+<span class="code-kw">contract</span> <span class="code-fn">Hello</span> {
+    string public greeting = <span class="code-str">"Hello, World!"</span>;
+}`,
     resources: [
       { label: "Official Solidity documentation", type: "Docs", url: "https://docs.soliditylang.org/" },
       { label: "CryptoZombies — free interactive course", type: "Interactive course", url: "https://cryptozombies.io/" },
@@ -826,6 +878,7 @@ function renderLibrary() {
         <button type="button" class="btn btn-ghost btn-small resources-toggle-btn">Resources &amp; project</button>
       </div>
       <div class="lang-resources">
+        ${l.example ? `<pre class="lang-example"><code>${l.example}</code></pre>` : ""}
         ${l.resources.map(resourceRow).join("")}
         <p class="lang-project"><strong>Project idea:</strong> ${l.project}</p>
       </div>

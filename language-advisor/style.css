@@ -982,6 +982,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .lang-card .lang-resources .resource-link { margin-bottom: 8px; }
 .lang-card .lang-project { font-size: 0.85rem; color: var(--text-dim); margin-top: 10px; }
 
+.lang-example {
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #1b1e2b;
+  overflow-x: auto;
+}
+.lang-example code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #e3e5f2;
+  white-space: pre;
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
