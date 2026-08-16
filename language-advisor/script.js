@@ -561,7 +561,10 @@ function renderAskResult(text) {
     <p class="result-tagline">${top.tagline}</p>
     <div class="result-resources">${top.resources.map(resourceRow).join("")}</div>
     <p class="result-project"><strong>First project idea:</strong> ${top.project}</p>
-    <button id="ask-track-btn" class="btn btn-primary btn-small" data-id="${top.id}">Track my progress with ${top.name}</button>
+    <div class="result-btn-row">
+      <button id="ask-track-btn" class="btn btn-primary btn-small" data-id="${top.id}">Track my progress with ${top.name}</button>
+      ${shareButtonHtml("ask-share-btn")}
+    </div>
     ${alts.length ? `
       <div class="result-alts">
         <div class="result-alts-label">Also worth a look</div>
@@ -572,6 +575,7 @@ function renderAskResult(text) {
   askResult.classList.remove("hidden");
 
   document.getElementById("ask-track-btn").addEventListener("click", () => startTracking(top.id));
+  wireShareButton("ask-share-btn", top);
   askResult.querySelectorAll(".result-alts a").forEach(a => {
     a.addEventListener("click", () => {
       setTimeout(() => {
@@ -675,6 +679,34 @@ function resourceRow(r) {
   </a>`;
 }
 
+function shareButtonHtml(id) {
+  return `<button type="button" id="${id}" class="btn btn-ghost btn-small share-btn">Share this result</button>`;
+}
+
+function wireShareButton(id, lang) {
+  const btn = document.getElementById(id);
+  if (!btn) return;
+  btn.addEventListener("click", async () => {
+    const url = `${location.origin}${location.pathname}#lang-${lang.id}`;
+    const text = `I got recommended to learn ${lang.name} on "Which Language?" — ${lang.tagline}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: "Which Language?", text, url });
+        return;
+      } catch {
+        return; // user cancelled the native share sheet — don't fall through to clipboard
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+      btn.textContent = "Copied!";
+      setTimeout(() => { btn.textContent = "Share this result"; }, 1500);
+    } catch {
+      btn.textContent = "Couldn't copy — select the text manually";
+    }
+  });
+}
+
 function showResult() {
   quizProgressBar.style.width = "100%";
   const ranked = Object.entries(totalScores).sort((a, b) => b[1] - a[1]);
@@ -699,7 +731,10 @@ function showResult() {
     </div>
     <div class="result-resources">${top.resources.map(resourceRow).join("")}</div>
     <p class="result-project"><strong>First project idea:</strong> ${top.project}</p>
-    <button id="track-lang-btn" class="btn btn-primary btn-small" data-id="${top.id}">Track my progress with ${top.name}</button>
+    <div class="result-btn-row">
+      <button id="track-lang-btn" class="btn btn-primary btn-small" data-id="${top.id}">Track my progress with ${top.name}</button>
+      ${shareButtonHtml("quiz-share-btn")}
+    </div>
     ${alts.length ? `
       <div class="result-alts">
         <div class="result-alts-label">Also worth a look</div>
@@ -722,6 +757,7 @@ function showResult() {
   });
 
   document.getElementById("track-lang-btn").addEventListener("click", () => startTracking(top.id));
+  wireShareButton("quiz-share-btn", top);
 }
 
 function restartQuiz() {

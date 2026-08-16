@@ -586,6 +586,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .result-project strong { color: var(--text); }
 
+.result-btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+.result-btn-row .btn-primary { margin-right: 0; }
+
 .result-alts { border-top: 1px solid var(--border); padding-top: 18px; }
 .result-alts-label { font-size: 0.8rem; color: var(--text-faint); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;}
 .alt-chip {
