@@ -230,7 +230,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero-btn-row .btn-primary { margin-right: 0; }
 
 /* Hero code-window illustration */
-.hero-illustration { position: relative; }
+.hero-illustration { position: relative; min-width: 0; }
+.hero-content { min-width: 0; }
 .code-window {
   background: #1b1e2b;
   border-radius: 14px;
@@ -264,6 +265,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   line-height: 1.7;
   color: #e3e5f2;
   overflow-x: auto;
+  overflow-y: hidden;
+  min-height: calc(1.7em * 8 + 50px);
+  white-space: pre;
 }
 .code-kw { color: #c792ea; }
 .code-fn { color: #82aaff; }
