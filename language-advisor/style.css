@@ -75,6 +75,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .wrap {
@@ -164,7 +165,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   flex-shrink: 0;
   transition: border-color 0.12s ease, transform 0.12s ease, background 0.12s ease;
 }
-.theme-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
+.theme-toggle:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 0 12px var(--accent-soft); }
 .theme-toggle:active { transform: scale(0.94); }
 
 /* Hero */
@@ -261,7 +262,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin-right: 12px;
   box-shadow: var(--shadow-btn);
 }
-.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(44, 70, 214, 0.36); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(44, 70, 214, 0.4), 0 0 16px var(--accent-soft); }
 .btn-ghost {
   background: transparent;
   color: var(--text-dim);
@@ -381,9 +382,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* Ask */
-.ask-section { padding: 20px 0 60px; scroll-margin-top: 80px; }
+.ask-section { padding: 48px 0 68px; scroll-margin-top: 80px; }
 .ask-section h2 { font-size: 1.9rem; margin-bottom: 8px; letter-spacing: -0.02em; }
-.ask-card { max-width: 680px; margin: 0 auto; padding: 28px 32px; }
+.ask-card { max-width: 680px; margin: 0 auto; padding: 36px 38px; }
 .ask-row { display: flex; gap: 10px; flex-wrap: wrap; }
 #ask-input {
   flex: 1;
@@ -402,9 +403,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .ask-empty a { color: var(--accent); }
 
 /* Assistant */
-.assistant-section { padding: 20px 0 60px; scroll-margin-top: 80px; }
+.assistant-section { padding: 48px 0 68px; scroll-margin-top: 80px; }
 .assistant-section h2 { font-size: 1.9rem; margin-bottom: 8px; letter-spacing: -0.02em; }
-.assistant-card { max-width: 680px; margin: 0 auto; padding: 28px 32px; }
+.assistant-card { max-width: 680px; margin: 0 auto; padding: 36px 38px; }
 .assistant-chat.hidden { display: none; }
 
 .assistant-messages {
@@ -649,9 +650,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .alt-chip:hover { color: var(--text); border-color: var(--accent); }
 
 /* Code checker */
-.checker-section { padding: 20px 0 80px; scroll-margin-top: 80px; }
+.checker-section { padding: 48px 0 88px; scroll-margin-top: 80px; }
 .checker-section h2 { font-size: 1.9rem; margin-bottom: 8px; letter-spacing: -0.02em; }
-.checker-card { max-width: 680px; margin: 0 auto; padding: 32px; }
+.checker-card { max-width: 680px; margin: 0 auto; padding: 38px; }
 
 .checker-note {
   font-size: 0.86rem;
@@ -829,9 +830,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .checker-actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
 
 /* Progress tracker */
-.progress-section { padding: 20px 0 80px; scroll-margin-top: 80px; }
+.progress-section { padding: 48px 0 88px; scroll-margin-top: 80px; }
 .progress-section h2 { font-size: 1.9rem; margin-bottom: 8px; letter-spacing: -0.02em; }
-.progress-card { max-width: 680px; margin: 0 auto; padding: 30px 32px; }
+.progress-card { max-width: 680px; margin: 0 auto; padding: 36px 38px; }
 .progress-empty { color: var(--text-dim); font-size: 0.95rem; margin: 0; }
 .progress-empty a { color: var(--accent); }
 
@@ -947,7 +948,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* Library */
-.library-section { padding: 40px 0 100px; scroll-margin-top: 80px; }
+.library-section { padding: 56px 0 100px; scroll-margin-top: 80px; }
 .library-section h2 { font-size: 1.9rem; margin-bottom: 8px; letter-spacing: -0.02em; }
 .section-sub { color: var(--text-dim); margin: 0 0 28px; max-width: 640px; }
 
@@ -981,14 +982,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .lang-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  gap: 20px;
 }
 .lang-card {
   padding: 22px;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
 }
-.lang-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); border-color: var(--accent); }
+.lang-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--accent); }
 .lang-card:has(.compare-checkbox:checked) { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .lang-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
 .lang-card h3 { margin: 0; font-size: 1.2rem; letter-spacing: -0.01em; }

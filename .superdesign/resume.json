@@ -1,0 +1,27 @@
+{
+  "targets": [
+    {
+      "target": "homepage",
+      "kind": "existing-ui",
+      "projectId": "01963acf-d426-4459-a5aa-e4fe2015b9a6",
+      "baselineDraftId": "eb879444-d581-48d4-bd7d-8500c9dc649e",
+      "activeDraftIds": [
+        "c3f30c0f-d691-4e53-9565-e298766b160c",
+        "6f1cd226-8cd1-44eb-9169-af7089f70aa2"
+      ],
+      "branchDescriptions": {
+        "c3f30c0f-d691-4e53-9565-e298766b160c": "Polished Language Advisor with Premium Micro-interactions — refined depth/hierarchy direction",
+        "6f1cd226-8cd1-44eb-9169-af7089f70aa2": "Refined Programming Language Advisor — generous whitespace/glow direction"
+      },
+      "designStyle": "keep-current-polish",
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "language-advisor/index.html",
+        "language-advisor/style.css",
+        ".superdesign/init/components.md"
+      ],
+      "componentExtraction": "skipped - vanilla CSS site, Superdesign components require Tailwind; low payoff for a single page",
+      "canvas": "https://superdesign.dev/teams/87affa14-0659-4675-a794-2c7e3c43fd95/projects/01963acf-d426-4459-a5aa-e4fe2015b9a6"
+    }
+  ]
+}
