@@ -1,0 +1,15 @@
+{
+  "name": "language-advisor",
+  "version": "1.0.0",
+  "description": "A quiz + AI-assisted advisor for picking a programming language to learn.",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}
