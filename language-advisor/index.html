@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+    } catch {}
+  })();
+</script>
 <meta name="description" content="Answer a quick quiz or just describe your project to get a programming language recommendation, free learning resources, a first project idea, and a way to track your progress.">
 <title>Which Language? — Find your first (or next) programming language</title>
 <meta property="og:type" content="website">
@@ -33,6 +42,9 @@
       <a href="#progress">My progress</a>
       <a href="#library">Browse languages</a>
     </nav>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="theme-toggle-icon">🌙</span>
+    </button>
   </div>
 </header>
 

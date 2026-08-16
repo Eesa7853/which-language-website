@@ -27,6 +27,28 @@ function safeRemove(key) {
 }
 
 /* ---------------------------------------------------------
+   Dark mode toggle — theme is applied before paint by an
+   inline script in <head>; this just wires up the button.
+--------------------------------------------------------- */
+const themeToggle = document.getElementById("theme-toggle");
+const themeToggleIcon = themeToggle.querySelector(".theme-toggle-icon");
+
+function syncThemeIcon() {
+  const isDark = document.documentElement.dataset.theme === "dark";
+  themeToggleIcon.textContent = isDark ? "☀️" : "🌙";
+  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+}
+
+themeToggle.addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  safeSet("theme", next);
+  syncThemeIcon();
+});
+
+syncThemeIcon();
+
+/* ---------------------------------------------------------
    Hero code-window — clickable language pills swap the snippet
 --------------------------------------------------------- */
 const HERO_SNIPPETS = {
