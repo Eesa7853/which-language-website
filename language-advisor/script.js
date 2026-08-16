@@ -31,11 +31,35 @@ function safeRemove(key) {
    inline script in <head>; this just wires up the button.
 --------------------------------------------------------- */
 const themeToggle = document.getElementById("theme-toggle");
-const themeToggleIcon = themeToggle.querySelector(".theme-toggle-icon");
+const themeToggleIcon = document.getElementById("theme-toggle-icon");
+
+const MOON_PATH = "M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401";
+const SUN_PATHS = [
+  { tag: "circle", attrs: { cx: "12", cy: "12", r: "4" } },
+  { tag: "path", attrs: { d: "M12 2v2" } },
+  { tag: "path", attrs: { d: "M12 20v2" } },
+  { tag: "path", attrs: { d: "m4.93 4.93 1.41 1.41" } },
+  { tag: "path", attrs: { d: "m17.66 17.66 1.41 1.41" } },
+  { tag: "path", attrs: { d: "M2 12h2" } },
+  { tag: "path", attrs: { d: "M20 12h2" } },
+  { tag: "path", attrs: { d: "m6.34 17.66-1.41 1.41" } },
+  { tag: "path", attrs: { d: "m19.07 4.93-1.41 1.41" } }
+];
 
 function syncThemeIcon() {
   const isDark = document.documentElement.dataset.theme === "dark";
-  themeToggleIcon.textContent = isDark ? "☀️" : "🌙";
+  themeToggleIcon.innerHTML = "";
+  if (isDark) {
+    SUN_PATHS.forEach(({ tag, attrs }) => {
+      const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+      Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+      themeToggleIcon.appendChild(el);
+    });
+  } else {
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", MOON_PATH);
+    themeToggleIcon.appendChild(path);
+  }
   themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
 }
 

@@ -166,6 +166,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   transition: border-color 0.12s ease, transform 0.12s ease, background 0.12s ease;
 }
 .theme-toggle:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 0 12px var(--accent-soft); }
+.theme-toggle-icon { color: var(--text); }
+
+.btn-icon-label { display: inline-flex; align-items: center; gap: 6px; }
 .theme-toggle:active { transform: scale(0.94); }
 
 /* Hero */
