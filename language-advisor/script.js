@@ -115,7 +115,13 @@ const LANGUAGES = [
     tagline: "Reads almost like English. The default choice for beginners, data, and AI.",
     difficulty: "Beginner",
     tags: ["web", "data", "ai", "automation", "beginner-friendly"],
-    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
+    example: `<span class="code-kw">match</span> command:
+    <span class="code-kw">case</span> <span class="code-str">"start"</span>:
+        <span class="code-fn">run</span>()
+    <span class="code-kw">case</span> <span class="code-str">"stop"</span>:
+        <span class="code-fn">halt</span>()
+    <span class="code-kw">case</span> _:
+        <span class="code-fn">print</span>(<span class="code-str">"unknown"</span>)`,
     resources: [
       { label: "Official docs & tutorial", type: "Docs", url: "https://docs.python.org/3/tutorial/" },
       { label: "freeCodeCamp: Scientific Computing with Python", type: "Free course", url: "https://www.freecodecamp.org/learn/scientific-computing-with-python/" },
@@ -130,7 +136,13 @@ const LANGUAGES = [
     tagline: "The language of the web. Runs in every browser and, via Node.js, on servers too.",
     difficulty: "Beginner",
     tags: ["web", "beginner-friendly", "career"],
-    example: `<span class="code-fn">console</span>.<span class="code-fn">log</span>(<span class="code-str">"Hello, World!"</span>);`,
+    example: `<span class="code-kw">switch</span> (fruit) {
+  <span class="code-kw">case</span> <span class="code-str">"apple"</span>:
+    <span class="code-fn">console</span>.<span class="code-fn">log</span>(<span class="code-str">"$0.59/lb"</span>);
+    <span class="code-kw">break</span>;
+  <span class="code-kw">default</span>:
+    <span class="code-fn">console</span>.<span class="code-fn">log</span>(<span class="code-str">"not sure"</span>);
+}`,
     resources: [
       { label: "MDN JavaScript guide", type: "Docs", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
       { label: "javascript.info — modern tutorial", type: "Free course", url: "https://javascript.info/" },
@@ -145,8 +157,9 @@ const LANGUAGES = [
     tagline: "JavaScript with a safety net — adds types that catch bugs before you run the code.",
     difficulty: "Moderate",
     tags: ["web", "career"],
-    example: `<span class="code-kw">function</span> <span class="code-fn">greet</span>(name: <span class="code-kw">string</span>): <span class="code-kw">string</span> {
-  <span class="code-kw">return</span> <span class="code-str">"Hello, " + name</span>;
+    example: `<span class="code-kw">interface</span> <span class="code-fn">User</span> {
+  name: <span class="code-kw">string</span>;
+  age: <span class="code-kw">number</span>;
 }`,
     resources: [
       { label: "Official TypeScript handbook", type: "Docs", url: "https://www.typescriptlang.org/docs/handbook/intro.html" },
@@ -162,10 +175,10 @@ const LANGUAGES = [
     tagline: "Verbose but rock-solid. Runs banks, Android apps, and half the enterprise world.",
     difficulty: "Moderate",
     tags: ["mobile", "career", "enterprise"],
-    example: `<span class="code-kw">public class</span> <span class="code-fn">Main</span> {
-    <span class="code-kw">public static void</span> <span class="code-fn">main</span>(String[] args) {
-        System.out.<span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>);
-    }
+    example: `<span class="code-kw">switch</span> (day) {
+    <span class="code-kw">case</span> 1 -> System.out.<span class="code-fn">println</span>(<span class="code-str">"Mon"</span>);
+    <span class="code-kw">case</span> 2 -> System.out.<span class="code-fn">println</span>(<span class="code-str">"Tue"</span>);
+    <span class="code-kw">default</span> -> System.out.<span class="code-fn">println</span>(<span class="code-str">"Other"</span>);
 }`,
     resources: [
       { label: "dev.java — official learning path", type: "Docs", url: "https://dev.java/learn/" },
@@ -181,7 +194,8 @@ const LANGUAGES = [
     tagline: "Microsoft's flagship language — game dev with Unity, desktop apps, and enterprise backends.",
     difficulty: "Moderate",
     tags: ["games", "desktop", "career", "enterprise"],
-    example: `Console.<span class="code-fn">WriteLine</span>(<span class="code-str">"Hello, World!"</span>);`,
+    example: `<span class="code-kw">using var</span> file = File.<span class="code-fn">OpenText</span>(<span class="code-str">"data.txt"</span>);
+Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLine</span>());`,
     resources: [
       { label: "Microsoft Learn: C# first steps", type: "Free course", url: "https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/" },
       { label: "Official C# documentation", type: "Docs", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
@@ -196,9 +210,8 @@ const LANGUAGES = [
     tagline: "Maximum control and speed. Powers game engines, browsers, and performance-critical systems.",
     difficulty: "Steep",
     tags: ["games", "systems", "performance"],
-    example: `#include &lt;iostream&gt;
-<span class="code-kw">int</span> <span class="code-fn">main</span>() {
-    std::cout &lt;&lt; <span class="code-str">"Hello, World!"</span>;
+    example: `<span class="code-kw">if</span> (<span class="code-kw">auto</span> it = m.<span class="code-fn">find</span>(key); it != m.<span class="code-fn">end</span>()) {
+    <span class="code-fn">use</span>(it->second);
 }`,
     resources: [
       { label: "learncpp.com — full free course", type: "Free course", url: "https://www.learncpp.com/" },
@@ -214,9 +227,8 @@ const LANGUAGES = [
     tagline: "The bedrock of modern computing. Understand C and you understand how computers actually work.",
     difficulty: "Steep",
     tags: ["systems", "performance"],
-    example: `#include &lt;stdio.h&gt;
-<span class="code-kw">int</span> <span class="code-fn">main</span>() {
-    <span class="code-fn">printf</span>(<span class="code-str">"Hello, World!"</span>);
+    example: `<span class="code-kw">for</span> (<span class="code-kw">int</span> i = 0; i &lt; 5; i++) {
+    <span class="code-fn">printf</span>(<span class="code-str">"%d\\n"</span>, i);
 }`,
     resources: [
       { label: "Learn-C.org — interactive tutorial", type: "Free course", url: "https://www.learn-c.org/" },
@@ -232,10 +244,9 @@ const LANGUAGES = [
     tagline: "Simple syntax, built-in concurrency, fast compiles. A favorite for backend and cloud infrastructure.",
     difficulty: "Moderate",
     tags: ["web", "systems", "career"],
-    example: `package main
-import <span class="code-str">"fmt"</span>
-<span class="code-kw">func</span> <span class="code-fn">main</span>() {
-    fmt.<span class="code-fn">Println</span>(<span class="code-str">"Hello, World!"</span>)
+    example: `<span class="code-kw">func</span> <span class="code-fn">readFile</span>() {
+    f, _ := os.<span class="code-fn">Open</span>(<span class="code-str">"data.txt"</span>)
+    <span class="code-kw">defer</span> f.<span class="code-fn">Close</span>()
 }`,
     resources: [
       { label: "A Tour of Go — official interactive tour", type: "Interactive course", url: "https://go.dev/tour/welcome/1" },
@@ -251,9 +262,9 @@ import <span class="code-str">"fmt"</span>
     tagline: "C++-level performance with a compiler that refuses to let you write memory-unsafe code.",
     difficulty: "Steep",
     tags: ["systems", "performance", "career"],
-    example: `<span class="code-kw">fn</span> <span class="code-fn">main</span>() {
-    <span class="code-fn">println!</span>(<span class="code-str">"Hello, World!"</span>);
-}`,
+    example: `<span class="code-kw">let</span> Some(x) = maybe_value <span class="code-kw">else</span> {
+    <span class="code-kw">return</span>;
+};`,
     resources: [
       { label: "The Rust Book — official free book", type: "Free course", url: "https://doc.rust-lang.org/book/" },
       { label: "Rust by Example", type: "Free course", url: "https://doc.rust-lang.org/rust-by-example/" },
@@ -268,7 +279,10 @@ import <span class="code-str">"fmt"</span>
     tagline: "Apple's language for building iOS, iPadOS, and macOS apps.",
     difficulty: "Moderate",
     tags: ["mobile", "career"],
-    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
+    example: `<span class="code-kw">guard let</span> name = person[<span class="code-str">"name"</span>] <span class="code-kw">else</span> {
+    <span class="code-kw">return</span>
+}
+<span class="code-fn">print</span>(<span class="code-str">"Hello \\(name)!"</span>)`,
     resources: [
       { label: "100 Days of SwiftUI (free)", type: "Free course", url: "https://www.hackingwithswift.com/100" },
       { label: "Official Swift documentation", type: "Docs", url: "https://www.swift.org/documentation/" },
@@ -283,8 +297,10 @@ import <span class="code-str">"fmt"</span>
     tagline: "The modern, official language for Android development. Also runs anywhere Java does.",
     difficulty: "Moderate",
     tags: ["mobile", "career"],
-    example: `<span class="code-kw">fun</span> <span class="code-fn">main</span>() {
-    <span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>)
+    example: `<span class="code-kw">val</span> result = <span class="code-kw">when</span> (x) {
+    1 -> <span class="code-str">"one"</span>
+    2 -> <span class="code-str">"two"</span>
+    <span class="code-kw">else</span> -> <span class="code-str">"other"</span>
 }`,
     resources: [
       { label: "Kotlin official docs & getting started", type: "Docs", url: "https://kotlinlang.org/docs/getting-started.html" },
@@ -300,8 +316,11 @@ import <span class="code-str">"fmt"</span>
     tagline: "Google's language + framework for building one app that runs on iOS, Android, web, and desktop.",
     difficulty: "Moderate",
     tags: ["mobile", "web"],
-    example: `<span class="code-kw">void</span> <span class="code-fn">main</span>() {
-  <span class="code-fn">print</span>(<span class="code-str">'Hello, World!'</span>);
+    example: `<span class="code-kw">switch</span> (command) {
+  <span class="code-kw">case</span> <span class="code-str">'OPEN'</span>:
+    <span class="code-fn">openDoor</span>();
+  <span class="code-kw">case</span> <span class="code-str">'CLOSED'</span>:
+    <span class="code-fn">closeDoor</span>();
 }`,
     resources: [
       { label: "Official Dart guides", type: "Docs", url: "https://dart.dev/guides" },
@@ -317,8 +336,9 @@ import <span class="code-str">"fmt"</span>
     tagline: "Powers a huge share of the web (including WordPress). Unglamorous, extremely employable.",
     difficulty: "Beginner",
     tags: ["web", "career"],
-    example: `&lt;?php
-<span class="code-fn">echo</span> <span class="code-str">"Hello, World!"</span>;`,
+    example: `<span class="code-kw">foreach</span> ($items <span class="code-kw">as</span> $key => $value) {
+    <span class="code-fn">echo</span> <span class="code-str">"$key: $value"</span>;
+}`,
     resources: [
       { label: "Official PHP manual — getting started", type: "Docs", url: "https://www.php.net/manual/en/getting-started.php" },
       { label: "freeCodeCamp: The PHP Handbook", type: "Free course", url: "https://www.freecodecamp.org/news/the-php-handbook/" },
@@ -333,7 +353,9 @@ import <span class="code-str">"fmt"</span>
     tagline: "Designed for programmer happiness. Clean syntax, and the backbone of the Ruby on Rails framework.",
     difficulty: "Beginner",
     tags: ["web", "beginner-friendly"],
-    example: `<span class="code-fn">puts</span> <span class="code-str">"Hello, World!"</span>`,
+    example: `<span class="code-kw">unless</span> authenticated
+  <span class="code-fn">redirect_to_login</span>
+<span class="code-kw">end</span>`,
     resources: [
       { label: "Official Ruby documentation", type: "Docs", url: "https://www.ruby-lang.org/en/documentation/" },
       { label: "Codecademy: Learn Ruby", type: "Interactive course", url: "https://www.codecademy.com/learn/learn-ruby" },
@@ -348,7 +370,11 @@ import <span class="code-str">"fmt"</span>
     tagline: "Not a general-purpose language, but essential: how you talk to almost every database.",
     difficulty: "Beginner",
     tags: ["data", "career"],
-    example: `<span class="code-kw">SELECT</span> <span class="code-str">'Hello, World!'</span>;`,
+    example: `<span class="code-kw">SELECT CASE</span>
+  <span class="code-kw">WHEN</span> age &lt; 18 <span class="code-kw">THEN</span> <span class="code-str">'minor'</span>
+  <span class="code-kw">ELSE</span> <span class="code-str">'adult'</span>
+<span class="code-kw">END</span>
+<span class="code-kw">FROM</span> users;`,
     resources: [
       { label: "SQLBolt — interactive lessons", type: "Interactive course", url: "https://sqlbolt.com/" },
       { label: "Khan Academy: Intro to SQL", type: "Free course", url: "https://www.khanacademy.org/computing/computer-programming/sql" },
@@ -363,7 +389,12 @@ import <span class="code-str">"fmt"</span>
     tagline: "Built by and for statisticians. Deep roots in academia, research, and statistical analysis.",
     difficulty: "Moderate",
     tags: ["data", "ai"],
-    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
+    example: `i &lt;- 1
+<span class="code-kw">repeat</span> {
+  <span class="code-fn">print</span>(i)
+  <span class="code-kw">if</span> (i >= 5) <span class="code-kw">break</span>
+  i &lt;- i + 1
+}`,
     resources: [
       { label: "R for Data Science (free book)", type: "Free course", url: "https://r4ds.hadley.nz/" },
       { label: "swirl — learn R interactively, in R", type: "Interactive course", url: "https://swirlstats.com/" },
@@ -378,7 +409,11 @@ import <span class="code-str">"fmt"</span>
     tagline: "A tiny, fast scripting language embedded inside bigger programs — best known as how Roblox games are built.",
     difficulty: "Beginner",
     tags: ["games", "automation", "beginner-friendly"],
-    example: `<span class="code-fn">print</span>(<span class="code-str">"Hello, World!"</span>)`,
+    example: `<span class="code-kw">local</span> i = 1
+<span class="code-kw">repeat</span>
+  <span class="code-fn">print</span>(i)
+  i = i + 1
+<span class="code-kw">until</span> i > 5`,
     resources: [
       { label: "Programming in Lua (free official book)", type: "Free course", url: "https://www.lua.org/pil/contents.html" },
       { label: "Learn X in Y minutes: Lua", type: "Docs", url: "https://learnxinyminutes.com/docs/lua/" },
@@ -394,7 +429,9 @@ import <span class="code-str">"fmt"</span>
     tagline: "The scripting glue of every Unix system — a few lines here save you hours of repetitive manual work.",
     difficulty: "Beginner",
     tags: ["automation", "systems", "beginner-friendly"],
-    example: `<span class="code-fn">echo</span> <span class="code-str">"Hello, World!"</span>`,
+    example: `<span class="code-kw">until</span> [ <span class="code-str">"$done"</span> = <span class="code-str">"true"</span> ]; <span class="code-kw">do</span>
+  <span class="code-fn">check_status</span>
+<span class="code-kw">done</span>`,
     resources: [
       { label: "GNU Bash reference manual", type: "Docs", url: "https://www.gnu.org/software/bash/manual/bash.html" },
       { label: "Learn Shell — free interactive tutorial", type: "Interactive course", url: "https://www.learnshell.org/" },
@@ -409,7 +446,9 @@ import <span class="code-str">"fmt"</span>
     tagline: "Java's JVM power meets functional programming — the language behind Spark and a lot of big-data infrastructure.",
     difficulty: "Steep",
     tags: ["data", "enterprise", "career"],
-    example: `<span class="code-kw">@main def</span> <span class="code-fn">hello</span>() = <span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>)`,
+    example: `<span class="code-kw">val</span> doubled = <span class="code-kw">for</span>
+  x &lt;- 1 <span class="code-kw">to</span> 5
+<span class="code-kw">yield</span> x * 2`,
     resources: [
       { label: "Official Scala documentation", type: "Docs", url: "https://docs.scala-lang.org/" },
       { label: "Tour of Scala — interactive intro", type: "Interactive course", url: "https://docs.scala-lang.org/tour/tour-of-scala.html" },
@@ -424,7 +463,11 @@ import <span class="code-str">"fmt"</span>
     tagline: "Built for systems that can't go down — a concurrent, fault-tolerant language behind Discord's real-time infrastructure.",
     difficulty: "Moderate",
     tags: ["web", "career"],
-    example: `IO.<span class="code-fn">puts</span>(<span class="code-str">"Hello, World!"</span>)`,
+    example: `<span class="code-kw">cond do</span>
+  score >= 90 -> <span class="code-str">"A"</span>
+  score >= 80 -> <span class="code-str">"B"</span>
+  <span class="code-kw">true</span> -> <span class="code-str">"F"</span>
+<span class="code-kw">end</span>`,
     resources: [
       { label: "Official Elixir getting-started guide", type: "Docs", url: "https://hexdocs.pm/elixir/introduction.html" },
       { label: "Elixir School — free lessons", type: "Free course", url: "https://elixirschool.com/" },
@@ -439,7 +482,13 @@ import <span class="code-str">"fmt"</span>
     tagline: "Reads almost like Python, runs almost like C — built specifically for fast numerical and scientific computing.",
     difficulty: "Moderate",
     tags: ["data", "ai", "performance"],
-    example: `<span class="code-fn">println</span>(<span class="code-str">"Hello, World!"</span>)`,
+    example: `<span class="code-kw">if</span> x &lt; y
+    <span class="code-fn">println</span>(<span class="code-str">"less"</span>)
+<span class="code-kw">elseif</span> x > y
+    <span class="code-fn">println</span>(<span class="code-str">"greater"</span>)
+<span class="code-kw">else</span>
+    <span class="code-fn">println</span>(<span class="code-str">"equal"</span>)
+<span class="code-kw">end</span>`,
     resources: [
       { label: "Official Julia documentation", type: "Docs", url: "https://docs.julialang.org/" },
       { label: "Getting Started with Julia (official)", type: "Free course", url: "https://julialang.org/learning/getting-started/" },
@@ -454,10 +503,8 @@ import <span class="code-str">"fmt"</span>
     tagline: "A modern, minimal alternative to C — full manual control over memory, without decades of historical baggage.",
     difficulty: "Steep",
     tags: ["systems", "performance"],
-    example: `<span class="code-kw">const</span> std = @import(<span class="code-str">"std"</span>);
-<span class="code-kw">pub fn</span> <span class="code-fn">main</span>() <span class="code-kw">void</span> {
-    std.debug.<span class="code-fn">print</span>(<span class="code-str">"Hello, World!\\n"</span>, .{});
-}`,
+    example: `<span class="code-kw">const</span> file = <span class="code-kw">try</span> <span class="code-fn">openFile</span>();
+<span class="code-kw">defer</span> file.<span class="code-fn">close</span>();`,
     resources: [
       { label: "Official Zig documentation", type: "Docs", url: "https://ziglang.org/documentation/master/" },
       { label: "ziglearn.org — free guide", type: "Free course", url: "https://ziglearn.org/" },
@@ -472,9 +519,10 @@ import <span class="code-str">"fmt"</span>
     tagline: "The language of Ethereum smart contracts — code that moves real money, so mistakes are genuinely expensive.",
     difficulty: "Moderate",
     tags: ["career", "blockchain"],
-    example: `<span class="code-kw">pragma</span> solidity ^0.8.0;
-<span class="code-kw">contract</span> <span class="code-fn">Hello</span> {
-    string public greeting = <span class="code-str">"Hello, World!"</span>;
+    example: `<span class="code-kw">try</span> feed.<span class="code-fn">getData</span>(token) <span class="code-kw">returns</span> (uint v) {
+    <span class="code-kw">return</span> v;
+} <span class="code-kw">catch</span> {
+    <span class="code-kw">return</span> 0;
 }`,
     resources: [
       { label: "Official Solidity documentation", type: "Docs", url: "https://docs.soliditylang.org/" },
