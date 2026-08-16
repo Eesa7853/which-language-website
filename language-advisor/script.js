@@ -268,6 +268,90 @@ const LANGUAGES = [
       { label: "MCP implementation in Lua", type: "Real project", url: "https://github.com/dennisonbertram/mcp-lua" }
     ],
     project: "Build a simple script in Roblox Studio (Luau) that reacts to a player action, or write a small config/plugin script for Neovim."
+  },
+  {
+    id: "bash",
+    name: "Bash / Shell",
+    tagline: "The scripting glue of every Unix system — a few lines here save you hours of repetitive manual work.",
+    difficulty: "Beginner",
+    tags: ["automation", "systems", "beginner-friendly"],
+    resources: [
+      { label: "GNU Bash reference manual", type: "Docs", url: "https://www.gnu.org/software/bash/manual/bash.html" },
+      { label: "Learn Shell — free interactive tutorial", type: "Interactive course", url: "https://www.learnshell.org/" },
+      { label: "Codecademy: Learn Bash Scripting", type: "Interactive course", url: "https://www.codecademy.com/learn/bash-scripting" },
+      { label: "MCP server framework for Bash", type: "Real project", url: "https://github.com/yaniv-golan/mcp-bash-framework" }
+    ],
+    project: "Write a script that backs up a folder on a schedule, or one that automatically renames and sorts a messy Downloads folder."
+  },
+  {
+    id: "scala",
+    name: "Scala",
+    tagline: "Java's JVM power meets functional programming — the language behind Spark and a lot of big-data infrastructure.",
+    difficulty: "Steep",
+    tags: ["data", "enterprise", "career"],
+    resources: [
+      { label: "Official Scala documentation", type: "Docs", url: "https://docs.scala-lang.org/" },
+      { label: "Tour of Scala — interactive intro", type: "Interactive course", url: "https://docs.scala-lang.org/tour/tour-of-scala.html" },
+      { label: "The Scala 3 Book (free)", type: "Free course", url: "https://docs.scala-lang.org/scala3/book/introduction.html" },
+      { label: "MCP server in Scala", type: "Real project", url: "https://github.com/windymelt/mcp-scala" }
+    ],
+    project: "Write a small command-line tool that processes a list of records using Scala's collections and pattern matching."
+  },
+  {
+    id: "elixir",
+    name: "Elixir",
+    tagline: "Built for systems that can't go down — a concurrent, fault-tolerant language behind Discord's real-time infrastructure.",
+    difficulty: "Moderate",
+    tags: ["web", "career"],
+    resources: [
+      { label: "Official Elixir getting-started guide", type: "Docs", url: "https://hexdocs.pm/elixir/introduction.html" },
+      { label: "Elixir School — free lessons", type: "Free course", url: "https://elixirschool.com/" },
+      { label: "elixir-lang.org learning hub", type: "Docs", url: "https://elixir-lang.org/learning/" },
+      { label: "Anubis MCP — Elixir MCP SDK", type: "Real project", url: "https://github.com/zoedsoupe/anubis-mcp" }
+    ],
+    project: "Build a simple real-time chat room with Phoenix Channels, or a small worker pool that never crashes the whole app."
+  },
+  {
+    id: "julia",
+    name: "Julia",
+    tagline: "Reads almost like Python, runs almost like C — built specifically for fast numerical and scientific computing.",
+    difficulty: "Moderate",
+    tags: ["data", "ai", "performance"],
+    resources: [
+      { label: "Official Julia documentation", type: "Docs", url: "https://docs.julialang.org/" },
+      { label: "Getting Started with Julia (official)", type: "Free course", url: "https://julialang.org/learning/getting-started/" },
+      { label: "JuliaAcademy — free courses", type: "Free course", url: "https://julialang.org/learning/" },
+      { label: "ModelContextProtocol.jl — MCP server SDK", type: "Real project", url: "https://github.com/JuliaSMLM/ModelContextProtocol.jl" }
+    ],
+    project: "Take a numerical dataset and benchmark a hand-written loop against Julia's built-in vectorized operations."
+  },
+  {
+    id: "zig",
+    name: "Zig",
+    tagline: "A modern, minimal alternative to C — full manual control over memory, without decades of historical baggage.",
+    difficulty: "Steep",
+    tags: ["systems", "performance"],
+    resources: [
+      { label: "Official Zig documentation", type: "Docs", url: "https://ziglang.org/documentation/master/" },
+      { label: "ziglearn.org — free guide", type: "Free course", url: "https://ziglearn.org/" },
+      { label: "Official Zig learning hub", type: "Docs", url: "https://ziglang.org/learn/getting-started/" },
+      { label: "mcp.zig — MCP library for Zig", type: "Real project", url: "https://github.com/muhammad-fiaz/mcp.zig" }
+    ],
+    project: "Implement a basic memory allocator or a small command-line tool, managing every allocation by hand."
+  },
+  {
+    id: "solidity",
+    name: "Solidity",
+    tagline: "The language of Ethereum smart contracts — code that moves real money, so mistakes are genuinely expensive.",
+    difficulty: "Moderate",
+    tags: ["career", "blockchain"],
+    resources: [
+      { label: "Official Solidity documentation", type: "Docs", url: "https://docs.soliditylang.org/" },
+      { label: "CryptoZombies — free interactive course", type: "Interactive course", url: "https://cryptozombies.io/" },
+      { label: "Full Blockchain & Solidity course (freeCodeCamp)", type: "Free course", url: "https://github.com/smartcontractkit/full-blockchain-solidity-course-js" },
+      { label: "OpenZeppelin Contracts — industry-standard library", type: "Real project", url: "https://github.com/OpenZeppelin/openzeppelin-contracts" }
+    ],
+    project: "Write and deploy a simple ERC-20 token or a basic voting smart contract to a testnet."
   }
 ];
 
@@ -280,13 +364,13 @@ const QUIZ = [
     question: "What do you mainly want to build or do?",
     key: "goal",
     options: [
-      { label: "Websites & web apps", sub: "Anything that runs in a browser", scores: { javascript: 3, typescript: 2, python: 2, php: 2, ruby: 2, go: 1 } },
+      { label: "Websites & web apps", sub: "Anything that runs in a browser", scores: { javascript: 3, typescript: 2, python: 2, php: 2, ruby: 2, go: 1, elixir: 1 } },
       { label: "Mobile apps", sub: "iOS, Android, or both", scores: { swift: 3, kotlin: 3, dart: 3, javascript: 1 } },
-      { label: "Data analysis, AI, or machine learning", sub: "Working with numbers, models, and datasets", scores: { python: 4, r: 3, sql: 2 } },
+      { label: "Data analysis, AI, or machine learning", sub: "Working with numbers, models, and datasets", scores: { python: 4, r: 3, sql: 2, julia: 2, scala: 1 } },
       { label: "Games", sub: "2D, 3D, big or small", scores: { csharp: 3, cpp: 3, python: 1, lua: 2 } },
-      { label: "Automate boring tasks / scripts", sub: "Save yourself time on repetitive stuff", scores: { python: 4, javascript: 2 } },
+      { label: "Automate boring tasks / scripts", sub: "Save yourself time on repetitive stuff", scores: { python: 4, javascript: 2, bash: 3 } },
       { label: "Desktop software", sub: "Apps that run natively on a computer", scores: { csharp: 3, java: 2, cpp: 2, python: 1 } },
-      { label: "Systems, hardware, or performance-critical software", sub: "Operating systems, embedded devices, engines", scores: { c: 3, cpp: 3, rust: 3, go: 1 } },
+      { label: "Systems, hardware, or performance-critical software", sub: "Operating systems, embedded devices, engines", scores: { c: 3, cpp: 3, rust: 3, go: 1, zig: 3 } },
       { label: "I'm not sure yet — I just want to start coding", sub: "Give me something forgiving and widely useful", scores: { python: 3, javascript: 2 } }
     ]
   },
@@ -296,17 +380,17 @@ const QUIZ = [
     options: [
       { label: "None at all", sub: "This would be my first language", scores: { python: 2, javascript: 1, ruby: 1 } },
       { label: "A little", sub: "I've done a tutorial or a class", scores: { python: 1, javascript: 1, typescript: 1 } },
-      { label: "Yes, I know at least one language well", sub: "Looking to add a new one", scores: { rust: 2, go: 2, cpp: 1, kotlin: 1 } }
+      { label: "Yes, I know at least one language well", sub: "Looking to add a new one", scores: { rust: 2, go: 2, cpp: 1, kotlin: 1, zig: 1, elixir: 1 } }
     ]
   },
   {
     question: "What matters most to you right now?",
     key: "priority",
     options: [
-      { label: "Getting hired / switching careers fast", sub: "Job-market demand is the priority", scores: { javascript: 2, python: 2, java: 2, sql: 2, csharp: 1 } },
-      { label: "Learning fundamentals deeply", sub: "I want to really understand how computers work", scores: { c: 3, cpp: 2, rust: 1 } },
+      { label: "Getting hired / switching careers fast", sub: "Job-market demand is the priority", scores: { javascript: 2, python: 2, java: 2, sql: 2, csharp: 1, scala: 1 } },
+      { label: "Learning fundamentals deeply", sub: "I want to really understand how computers work", scores: { c: 3, cpp: 2, rust: 1, zig: 2 } },
       { label: "Building something fun quickly", sub: "I want to see results fast and stay motivated", scores: { python: 2, javascript: 2, ruby: 2 } },
-      { label: "Long-term depth in one ecosystem", sub: "I'm fine with a slower ramp-up for more power later", scores: { rust: 2, cpp: 2, go: 1, kotlin: 1 } }
+      { label: "Long-term depth in one ecosystem", sub: "I'm fine with a slower ramp-up for more power later", scores: { rust: 2, cpp: 2, go: 1, kotlin: 1, scala: 1, zig: 1 } }
     ]
   },
   {
@@ -314,7 +398,7 @@ const QUIZ = [
     key: "style",
     options: [
       { label: "Forgiving and quick to see results", sub: "Fewer rules, faster feedback loop", scores: { python: 2, javascript: 2, ruby: 2, php: 1 } },
-      { label: "I don't mind a stricter, more structured language", sub: "I'm fine with more setup if it prevents bugs", scores: { typescript: 2, java: 2, csharp: 2, rust: 2, go: 1, cpp: 1 } }
+      { label: "I don't mind a stricter, more structured language", sub: "I'm fine with more setup if it prevents bugs", scores: { typescript: 2, java: 2, csharp: 2, rust: 2, go: 1, cpp: 1, scala: 2 } }
     ]
   }
 ];
@@ -336,8 +420,14 @@ const GOAL_KEYWORDS = [
   { patterns: ["cross-platform app", "cross platform app", "flutter"], scores: { dart: 3 } },
   { patterns: ["discord bot", "telegram bot", "chatbot", "bot"], scores: { python: 3, javascript: 1 } },
   { patterns: ["scraper", "web scraping", "scrape"], scores: { python: 3 } },
-  { patterns: ["automate", "automation", "script"], scores: { python: 3 } },
-  { patterns: ["data analysis", "data science", "spreadsheet", "chart", "visualization", "dataset"], scores: { python: 3, r: 2 } },
+  { patterns: ["automate", "automation", "script"], scores: { python: 3, bash: 2 } },
+  { patterns: ["bash script", "shell script", "cron job", "cron", "linux script", "terminal automation"], scores: { bash: 4 } },
+  { patterns: ["data analysis", "data science", "spreadsheet", "chart", "visualization", "dataset"], scores: { python: 3, r: 2, julia: 1 } },
+  { patterns: ["numerical computing", "scientific computing", "simulation"], scores: { julia: 4 } },
+  { patterns: ["big data", "spark", "data pipeline"], scores: { scala: 4 } },
+  { patterns: ["elixir", "phoenix framework", "erlang"], scores: { elixir: 4 } },
+  { patterns: ["zig"], scores: { zig: 4 } },
+  { patterns: ["smart contract", "solidity", "ethereum", "web3", "nft", "crypto token"], scores: { solidity: 4 } },
   { patterns: ["machine learning", "ai model", "neural network", "deep learning", "artificial intelligence"], scores: { python: 4 } },
   { patterns: ["rest api", "backend", "api", "server"], scores: { javascript: 2, python: 2, go: 2 } },
   { patterns: ["database", "sql", "query"], scores: { sql: 4 } },
