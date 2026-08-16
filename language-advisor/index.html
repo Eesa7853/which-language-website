@@ -50,9 +50,9 @@
             <span class="code-dot code-dot-red"></span>
             <span class="code-dot code-dot-yellow"></span>
             <span class="code-dot code-dot-green"></span>
-            <span class="code-window-file">recommend.py</span>
+            <span id="code-window-file" class="code-window-file">recommend.py</span>
           </div>
-          <pre class="code-window-body"><span class="code-kw">def</span> <span class="code-fn">recommend</span>(goal):
+          <pre id="code-window-body" class="code-window-body"><span class="code-kw">def</span> <span class="code-fn">recommend</span>(goal):
     <span class="code-kw">if</span> <span class="code-str">"web"</span> <span class="code-kw">in</span> goal:
         <span class="code-kw">return</span> <span class="code-str">"JavaScript"</span>
     <span class="code-kw">if</span> <span class="code-str">"data"</span> <span class="code-kw">in</span> goal <span class="code-kw">or</span> <span class="code-str">"ai"</span> <span class="code-kw">in</span> goal:
@@ -61,8 +61,13 @@
         <span class="code-kw">return</span> <span class="code-str">"Dart / Flutter"</span>
     <span class="code-kw">return</span> <span class="code-str">"it depends"</span> <span class="code-emoji">✨</span></pre>
         </div>
-        <div class="code-window-pills">
-          <span>Python</span><span>JavaScript</span><span>Rust</span><span>Go</span><span>Swift</span><span>SQL</span>
+        <div id="code-window-pills" class="code-window-pills">
+          <button type="button" class="code-pill active" data-lang="python">Python</button>
+          <button type="button" class="code-pill" data-lang="javascript">JavaScript</button>
+          <button type="button" class="code-pill" data-lang="rust">Rust</button>
+          <button type="button" class="code-pill" data-lang="go">Go</button>
+          <button type="button" class="code-pill" data-lang="swift">Swift</button>
+          <button type="button" class="code-pill" data-lang="sql">SQL</button>
         </div>
       </div>
     </div>

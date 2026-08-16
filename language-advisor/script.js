@@ -27,6 +27,85 @@ function safeRemove(key) {
 }
 
 /* ---------------------------------------------------------
+   Hero code-window — clickable language pills swap the snippet
+--------------------------------------------------------- */
+const HERO_SNIPPETS = {
+  python: {
+    file: "recommend.py",
+    html: `<span class="code-kw">def</span> <span class="code-fn">recommend</span>(goal):
+    <span class="code-kw">if</span> <span class="code-str">"web"</span> <span class="code-kw">in</span> goal:
+        <span class="code-kw">return</span> <span class="code-str">"JavaScript"</span>
+    <span class="code-kw">if</span> <span class="code-str">"data"</span> <span class="code-kw">in</span> goal <span class="code-kw">or</span> <span class="code-str">"ai"</span> <span class="code-kw">in</span> goal:
+        <span class="code-kw">return</span> <span class="code-str">"Python"</span>
+    <span class="code-kw">if</span> <span class="code-str">"mobile"</span> <span class="code-kw">in</span> goal:
+        <span class="code-kw">return</span> <span class="code-str">"Dart / Flutter"</span>
+    <span class="code-kw">return</span> <span class="code-str">"it depends"</span> <span class="code-emoji">✨</span>`
+  },
+  javascript: {
+    file: "recommend.js",
+    html: `<span class="code-kw">function</span> <span class="code-fn">recommend</span>(goal) {
+  <span class="code-kw">if</span> (goal.<span class="code-fn">includes</span>(<span class="code-str">"web"</span>)) <span class="code-kw">return</span> <span class="code-str">"JavaScript"</span>;
+  <span class="code-kw">if</span> (goal.<span class="code-fn">includes</span>(<span class="code-str">"data"</span>) <span class="code-kw">||</span> goal.<span class="code-fn">includes</span>(<span class="code-str">"ai"</span>)) <span class="code-kw">return</span> <span class="code-str">"Python"</span>;
+  <span class="code-kw">if</span> (goal.<span class="code-fn">includes</span>(<span class="code-str">"mobile"</span>)) <span class="code-kw">return</span> <span class="code-str">"Dart / Flutter"</span>;
+  <span class="code-kw">return</span> <span class="code-str">"it depends"</span> <span class="code-emoji">✨</span>;
+}`
+  },
+  rust: {
+    file: "recommend.rs",
+    html: `<span class="code-kw">fn</span> <span class="code-fn">recommend</span>(goal: &str) -> &str {
+    <span class="code-kw">if</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"web"</span>) { <span class="code-kw">return</span> <span class="code-str">"JavaScript"</span>; }
+    <span class="code-kw">if</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"data"</span>) <span class="code-kw">||</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"ai"</span>) { <span class="code-kw">return</span> <span class="code-str">"Python"</span>; }
+    <span class="code-kw">if</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"mobile"</span>) { <span class="code-kw">return</span> <span class="code-str">"Dart / Flutter"</span>; }
+    <span class="code-str">"it depends"</span> <span class="code-emoji">✨</span>
+}`
+  },
+  go: {
+    file: "recommend.go",
+    html: `<span class="code-kw">func</span> <span class="code-fn">recommend</span>(goal <span class="code-kw">string</span>) <span class="code-kw">string</span> {
+    <span class="code-kw">if</span> strings.<span class="code-fn">Contains</span>(goal, <span class="code-str">"web"</span>) { <span class="code-kw">return</span> <span class="code-str">"JavaScript"</span> }
+    <span class="code-kw">if</span> strings.<span class="code-fn">Contains</span>(goal, <span class="code-str">"data"</span>) <span class="code-kw">||</span> strings.<span class="code-fn">Contains</span>(goal, <span class="code-str">"ai"</span>) { <span class="code-kw">return</span> <span class="code-str">"Python"</span> }
+    <span class="code-kw">if</span> strings.<span class="code-fn">Contains</span>(goal, <span class="code-str">"mobile"</span>) { <span class="code-kw">return</span> <span class="code-str">"Dart / Flutter"</span> }
+    <span class="code-kw">return</span> <span class="code-str">"it depends"</span> <span class="code-emoji">✨</span>
+}`
+  },
+  swift: {
+    file: "recommend.swift",
+    html: `<span class="code-kw">func</span> <span class="code-fn">recommend</span>(_ goal: String) -> String {
+    <span class="code-kw">if</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"web"</span>) { <span class="code-kw">return</span> <span class="code-str">"JavaScript"</span> }
+    <span class="code-kw">if</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"data"</span>) <span class="code-kw">||</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"ai"</span>) { <span class="code-kw">return</span> <span class="code-str">"Python"</span> }
+    <span class="code-kw">if</span> goal.<span class="code-fn">contains</span>(<span class="code-str">"mobile"</span>) { <span class="code-kw">return</span> <span class="code-str">"Dart / Flutter"</span> }
+    <span class="code-kw">return</span> <span class="code-str">"it depends"</span> <span class="code-emoji">✨</span>
+}`
+  },
+  sql: {
+    file: "recommend.sql",
+    html: `<span class="code-kw">SELECT CASE</span>
+  <span class="code-kw">WHEN</span> goal <span class="code-kw">LIKE</span> <span class="code-str">'%web%'</span> <span class="code-kw">THEN</span> <span class="code-str">'JavaScript'</span>
+  <span class="code-kw">WHEN</span> goal <span class="code-kw">LIKE</span> <span class="code-str">'%data%'</span> <span class="code-kw">OR</span> goal <span class="code-kw">LIKE</span> <span class="code-str">'%ai%'</span> <span class="code-kw">THEN</span> <span class="code-str">'Python'</span>
+  <span class="code-kw">WHEN</span> goal <span class="code-kw">LIKE</span> <span class="code-str">'%mobile%'</span> <span class="code-kw">THEN</span> <span class="code-str">'Dart / Flutter'</span>
+  <span class="code-kw">ELSE</span> <span class="code-str">'it depends'</span> <span class="code-emoji">✨</span>
+<span class="code-kw">END AS</span> language <span class="code-kw">FROM</span> goals;`
+  }
+};
+
+const codeWindowFile = document.getElementById("code-window-file");
+const codeWindowBody = document.getElementById("code-window-body");
+const codeWindowPills = document.getElementById("code-window-pills");
+
+if (codeWindowPills) {
+  codeWindowPills.querySelectorAll(".code-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+      const snippet = HERO_SNIPPETS[pill.dataset.lang];
+      if (!snippet) return;
+      codeWindowPills.querySelectorAll(".code-pill").forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
+      codeWindowFile.textContent = snippet.file;
+      codeWindowBody.innerHTML = snippet.html;
+    });
+  });
+}
+
+/* ---------------------------------------------------------
    Language data
 --------------------------------------------------------- */
 const LANGUAGES = [
