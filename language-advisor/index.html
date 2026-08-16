@@ -33,13 +33,38 @@
 <main>
 
   <section class="hero">
-    <div class="wrap">
-      <span class="hero-badge">✨ Free &middot; No sign-up needed</span>
-      <h1>Not sure what language to learn?</h1>
-      <p class="lede">Answer a few quick questions and get a language recommendation with a straight-line path to learning it — free resources, first project ideas, and honest difficulty ratings.</p>
-      <a class="btn btn-primary" href="#quiz">Start the 1-minute quiz</a>
-      <a class="btn btn-ghost" href="#library">Skip to the language library</a>
-      <p class="hero-alt">Or skip both — <a href="#ask">just tell me what you're building</a>.</p>
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <span class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>A free, honest advisor</span>
+        <h1>Not sure which programming language to learn?</h1>
+        <p class="lede">Answer a few quick questions, describe what you want to build, or just ask the assistant. You'll get one recommendation and a real path to actually start learning it.</p>
+        <div class="hero-btn-row">
+          <a class="btn btn-primary" href="#quiz">Start the 1-minute quiz</a>
+          <a class="btn btn-ghost" href="#library">Skip to the language library</a>
+        </div>
+        <p class="hero-alt">Or <a href="#ask">just describe what you want to build</a> and get an instant answer.</p>
+      </div>
+      <div class="hero-illustration">
+        <div class="code-window">
+          <div class="code-window-head">
+            <span class="code-dot code-dot-red"></span>
+            <span class="code-dot code-dot-yellow"></span>
+            <span class="code-dot code-dot-green"></span>
+            <span class="code-window-file">recommend.py</span>
+          </div>
+          <pre class="code-window-body"><span class="code-kw">def</span> <span class="code-fn">recommend</span>(goal):
+    <span class="code-kw">if</span> <span class="code-str">"web"</span> <span class="code-kw">in</span> goal:
+        <span class="code-kw">return</span> <span class="code-str">"JavaScript"</span>
+    <span class="code-kw">if</span> <span class="code-str">"data"</span> <span class="code-kw">in</span> goal <span class="code-kw">or</span> <span class="code-str">"ai"</span> <span class="code-kw">in</span> goal:
+        <span class="code-kw">return</span> <span class="code-str">"Python"</span>
+    <span class="code-kw">if</span> <span class="code-str">"mobile"</span> <span class="code-kw">in</span> goal:
+        <span class="code-kw">return</span> <span class="code-str">"Dart / Flutter"</span>
+    <span class="code-kw">return</span> <span class="code-str">"it depends"</span> <span class="code-emoji">✨</span></pre>
+        </div>
+        <div class="code-window-pills">
+          <span>Python</span><span>JavaScript</span><span>Rust</span><span>Go</span><span>Swift</span><span>SQL</span>
+        </div>
+      </div>
     </div>
   </section>
 
