@@ -698,36 +698,37 @@ function renderLibrary() {
     <div class="card lang-card" id="lang-${l.id}" data-id="${l.id}">
       <div class="lang-card-top">
         <h3>${l.name}</h3>
-        <span class="difficulty-pill difficulty-${l.difficulty}">${l.difficulty}</span>
+        <label class="compare-check">
+          <input type="checkbox" class="compare-checkbox" data-id="${l.id}" ${compareSelection.includes(l.id) ? "checked" : ""}>
+          Compare
+        </label>
       </div>
+      <span class="difficulty-pill difficulty-${l.difficulty}">${l.difficulty}</span>
       <p class="lang-tagline">${l.tagline}</p>
       <div class="lang-tags">${l.tags.map(t => `<span>${t}</span>`).join("")}</div>
       <div class="lang-card-actions">
-        <span class="toggle-hint">View resources &darr;</span>
-        <button type="button" class="compare-btn ${compareSelection.includes(l.id) ? "active" : ""}" data-id="${l.id}">${compareSelection.includes(l.id) ? "✓ Comparing" : "+ Compare"}</button>
+        <button type="button" class="btn btn-primary btn-small track-btn" data-id="${l.id}">+ Track</button>
+        <button type="button" class="btn btn-ghost btn-small resources-toggle-btn">Resources &amp; project</button>
       </div>
       <div class="lang-resources">
         ${l.resources.map(resourceRow).join("")}
         <p class="lang-project"><strong>Project idea:</strong> ${l.project}</p>
-        <button type="button" class="track-btn" data-id="${l.id}">Track this language</button>
       </div>
     </div>
   `).join("") || `<p style="color:var(--text-faint)">No languages match that search.</p>`;
 
-  langGrid.querySelectorAll(".lang-card").forEach(card => {
-    card.addEventListener("click", (e) => {
-      if (e.target.closest("a") || e.target.closest("button")) return;
+  langGrid.querySelectorAll(".resources-toggle-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const card = btn.closest(".lang-card");
       card.classList.toggle("expanded");
-      const hint = card.querySelector(".toggle-hint");
-      hint.textContent = card.classList.contains("expanded") ? "Hide resources ↑" : "View resources ↓";
+      btn.textContent = card.classList.contains("expanded") ? "Hide resources" : "Resources & project";
     });
   });
 
-  langGrid.querySelectorAll(".compare-btn").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleCompare(btn.dataset.id);
-    });
+  langGrid.querySelectorAll(".compare-checkbox").forEach(box => {
+    box.addEventListener("click", (e) => e.stopPropagation());
+    box.addEventListener("change", () => toggleCompare(box.dataset.id));
   });
 
   langGrid.querySelectorAll(".track-btn").forEach(btn => {
@@ -775,9 +776,9 @@ function renderComparePanel() {
         <thead><tr><th></th>${langs.map(l => `<th>${l.name}</th>`).join("")}</tr></thead>
         <tbody>
           <tr><td>Difficulty</td>${langs.map(l => `<td><span class="difficulty-pill difficulty-${l.difficulty}">${l.difficulty}</span></td>`).join("")}</tr>
-          <tr><td>Best for</td>${langs.map(l => `<td>${l.tags.join(", ")}</td>`).join("")}</tr>
-          <tr><td>What it's like</td>${langs.map(l => `<td>${l.tagline}</td>`).join("")}</tr>
-          <tr><td>First project idea</td>${langs.map(l => `<td>${l.project}</td>`).join("")}</tr>
+          <tr><td>Tags</td>${langs.map(l => `<td><div class="compare-tags">${l.tags.map(t => `<span>${t}</span>`).join("")}</div></td>`).join("")}</tr>
+          <tr><td>Description</td>${langs.map(l => `<td>${l.tagline}</td>`).join("")}</tr>
+          <tr><td>First project</td>${langs.map(l => `<td>${l.project}</td>`).join("")}</tr>
         </tbody>
       </table>
     </div>
