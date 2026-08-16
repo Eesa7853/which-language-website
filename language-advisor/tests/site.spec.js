@@ -3,7 +3,7 @@ const { test, expect } = require("@playwright/test");
 test("homepage loads with quiz and library", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator(".quiz-question")).toBeVisible();
-  await expect(page.locator(".lang-card")).toHaveCount(17);
+  await expect(page.locator(".lang-card")).toHaveCount(23);
 });
 
 test("'Just ask' recommends Python for a calculator", async ({ page }) => {
@@ -45,22 +45,21 @@ test("library search filters correctly", async ({ page }) => {
 
 test("comparing two languages shows a comparison table", async ({ page }) => {
   await page.goto("/");
-  await page.locator("#lang-python .compare-btn").click();
-  await page.locator("#lang-javascript .compare-btn").click();
+  await page.locator("#lang-python .compare-checkbox").check();
+  await page.locator("#lang-javascript .compare-checkbox").check();
   await expect(page.locator("#compare-panel")).toBeVisible();
   await expect(page.locator("#compare-panel")).toContainText("Comparing 2 languages");
 });
 
-test("every language card has a real MCP resource link", async ({ page }) => {
+test("every github.com resource link is a real project or course reference", async ({ page }) => {
   await page.goto("/");
-  const mcpLinks = page.locator('.resource-link[href*="github.com"]');
-  await expect(mcpLinks).toHaveCount(17);
+  const githubLinks = page.locator('.resource-link[href*="github.com"]');
+  await expect(githubLinks).toHaveCount(24);
 });
 
 test("progress tracker starts empty and updates after tracking a language", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#progress-card")).toContainText("You're not tracking a language yet");
-  await page.locator("#lang-python").click();
   await page.locator("#lang-python .track-btn").click();
   await expect(page.locator(".progress-lang-name")).toHaveText("Python");
 });
