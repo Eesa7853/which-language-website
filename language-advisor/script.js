@@ -27,6 +27,17 @@ function safeRemove(key) {
 }
 
 /* ---------------------------------------------------------
+   Retrigger a CSS entrance animation on an element whose
+   content was just replaced (innerHTML swaps don't restart
+   animations on their own).
+--------------------------------------------------------- */
+function animateIn(el) {
+  el.classList.remove("anim-in");
+  void el.offsetWidth; // force reflow so the animation restarts
+  el.classList.add("anim-in");
+}
+
+/* ---------------------------------------------------------
    Dark mode toggle — theme is applied before paint by an
    inline script in <head>; this just wires up the button.
 --------------------------------------------------------- */
@@ -145,8 +156,12 @@ if (codeWindowPills) {
       if (!snippet) return;
       codeWindowPills.querySelectorAll(".code-pill").forEach(p => p.classList.remove("active"));
       pill.classList.add("active");
-      codeWindowFile.textContent = snippet.file;
-      codeWindowBody.innerHTML = snippet.html;
+      codeWindowBody.style.opacity = "0";
+      setTimeout(() => {
+        codeWindowFile.textContent = snippet.file;
+        codeWindowBody.innerHTML = snippet.html;
+        codeWindowBody.style.opacity = "1";
+      }, 150);
     });
   });
 }
@@ -694,6 +709,7 @@ function renderAskResult(text) {
   if (!ranked.length) {
     askResult.innerHTML = `<p class="ask-empty">I couldn't quite place that from the words used — try adding a bit more detail (e.g. "website", "mobile app", "game", "automate a task"), or take the <a href="#quiz">full quiz</a> instead.</p>`;
     askResult.classList.remove("hidden");
+    animateIn(askResult);
     return;
   }
 
@@ -719,6 +735,7 @@ function renderAskResult(text) {
     ` : ""}
   `;
   askResult.classList.remove("hidden");
+  animateIn(askResult);
 
   document.getElementById("ask-track-btn").addEventListener("click", () => startTracking(top.id));
   wireShareButton("ask-share-btn", top);
@@ -780,6 +797,7 @@ function renderStep() {
     <div class="quiz-options">${optionsHtml}</div>
     ${currentStep > 0 ? '<button class="quiz-back">&larr; Back</button>' : ""}
   `;
+  animateIn(quizBody);
 
   quizBody.querySelectorAll(".quiz-option").forEach(btn => {
     btn.addEventListener("click", () => selectOption(parseInt(btn.dataset.index, 10)));
@@ -891,6 +909,7 @@ function showResult() {
 
   quizCard.classList.add("hidden");
   resultCard.classList.remove("hidden");
+  animateIn(resultBody);
 
   resultCard.querySelectorAll(".result-alts a").forEach(a => {
     a.addEventListener("click", (e) => {
@@ -1045,6 +1064,7 @@ function renderComparePanel() {
       </table>
     </div>
   `;
+  animateIn(comparePanel);
   document.getElementById("clear-compare-btn").addEventListener("click", () => {
     compareSelection = [];
     renderLibrary();
@@ -1741,3 +1761,23 @@ renderProgress();
 refreshAssistantKeyUI();
 populateLangHint();
 refreshKeyUI();
+
+/* ---------------------------------------------------------
+   Scroll-reveal for section cards/headings
+--------------------------------------------------------- */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("in-view");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(
+  ".ask-card, .assistant-card, .quiz-card, .checker-card, .progress-card, " +
+  ".ask-section h2, .assistant-section h2, .checker-section h2, .progress-section h2, .library-section h2"
+).forEach(el => {
+  el.classList.add("reveal");
+  revealObserver.observe(el);
+});

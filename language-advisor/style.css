@@ -1062,6 +1062,49 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   white-space: pre;
 }
 
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+@keyframes fade-slide-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim-in { animation: fade-slide-in 0.4s ease; }
+
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.assistant-msg { animation: msg-in 0.28s ease; }
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.lang-card { animation: card-in 0.4s ease backwards; }
+.lang-card:nth-child(6n+1) { animation-delay: 0ms; }
+.lang-card:nth-child(6n+2) { animation-delay: 40ms; }
+.lang-card:nth-child(6n+3) { animation-delay: 80ms; }
+.lang-card:nth-child(6n+4) { animation-delay: 120ms; }
+.lang-card:nth-child(6n+5) { animation-delay: 160ms; }
+.lang-card:nth-child(6n+6) { animation-delay: 200ms; }
+
+.code-window-body { transition: opacity 0.15s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .anim-in, .assistant-msg, .lang-card, .code-window-body, body {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
