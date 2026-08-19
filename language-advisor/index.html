@@ -45,6 +45,10 @@
       <a href="#checker">Check my code</a>
       <a href="#progress">My progress</a>
       <a href="#library">Browse languages</a>
+      <a href="#reference">Docs &amp; syntax</a>
+      <a href="#market">Job market</a>
+      <a href="#playground">Playground</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
       <svg id="theme-toggle-icon" class="theme-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -105,6 +109,10 @@
         <div class="ask-row">
           <input id="ask-input" type="text" aria-label="Describe what you want to build" placeholder="e.g. I want to make a calculator, a website for my portfolio, a Discord bot…">
           <button id="ask-btn" class="btn btn-primary">Get a recommendation</button>
+        </div>
+        <div class="idea-chips-wrap">
+          <p class="idea-chips-label">Or pick a common project idea</p>
+          <div id="idea-chips" class="idea-chips"></div>
         </div>
         <div id="ask-result" class="ask-result hidden" aria-live="polite"></div>
       </div>
@@ -218,8 +226,8 @@
 
   <section id="progress" class="progress-section">
     <div class="wrap">
-      <h2>My progress</h2>
-      <p class="section-sub">Once you've picked a language, track your way through its resources here.</p>
+      <h2>My learning roadmap</h2>
+      <p class="section-sub">Once you've picked a language, get a week-by-week plan built from its real resources &mdash; not just a flat checklist.</p>
       <div id="progress-card" class="card progress-card"></div>
     </div>
   </section>
@@ -237,6 +245,54 @@
       <div id="compare-panel" class="compare-panel hidden"></div>
 
       <div id="lang-grid" class="lang-grid"></div>
+    </div>
+  </section>
+
+  <section id="reference" class="reference-section">
+    <div class="wrap">
+      <h2>Docs &amp; syntax reference</h2>
+      <p class="section-sub">Every language's official documentation and a real syntax example, all in one place &mdash; no clicking through cards.</p>
+      <div id="reference-grid" class="reference-grid"></div>
+    </div>
+  </section>
+
+  <section id="market" class="market-section">
+    <div class="wrap">
+      <h2>Which languages are actually in demand?</h2>
+      <p class="section-sub">Ranked by the <a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreferrer">TIOBE Index</a> &mdash; a monthly measure of how often each language turns up in search results, course listings, and third-party vendor course counts. It's a real, ongoing popularity signal, not a salary guarantee.</p>
+      <div class="market-status">
+        <span id="market-status-text" class="market-status-text"></span>
+        <button id="market-refresh-btn" class="btn btn-ghost btn-small hidden">Refresh now</button>
+      </div>
+      <div id="market-list" class="market-list"></div>
+    </div>
+  </section>
+
+  <section id="playground" class="playground-section">
+    <div class="wrap">
+      <h2>Try it right now</h2>
+      <p class="section-sub">Run real Python or JavaScript directly in this page &mdash; no install, no account. Every other language links out to its own free, official online editor.</p>
+      <div class="card playground-card">
+        <div class="playground-tabs">
+          <button type="button" class="playground-tab active" data-lang="python">Python</button>
+          <button type="button" class="playground-tab" data-lang="javascript">JavaScript</button>
+        </div>
+        <textarea id="playground-code" class="playground-code" spellcheck="false" aria-label="Code editor"></textarea>
+        <div class="playground-actions">
+          <button id="playground-run-btn" class="btn btn-primary btn-small">Run</button>
+          <span id="playground-status" class="playground-status"></span>
+        </div>
+        <pre id="playground-output" class="playground-output" aria-live="polite"><code>Output will show up here.</code></pre>
+      </div>
+      <div id="playground-links" class="playground-links"></div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="wrap">
+      <h2>Questions &amp; myths</h2>
+      <p class="section-sub">Honest, opinionated answers to what people actually ask before picking a language.</p>
+      <div id="faq-list" class="faq-list"></div>
     </div>
   </section>
 

@@ -173,6 +173,7 @@ const LANGUAGES = [
   {
     id: "python",
     name: "Python",
+    tiobeRank: 1,
     tagline: "Reads almost like English. The default choice for beginners, data, and AI.",
     difficulty: "Beginner",
     tags: ["web", "data", "ai", "automation", "beginner-friendly"],
@@ -194,6 +195,7 @@ const LANGUAGES = [
   {
     id: "javascript",
     name: "JavaScript",
+    tiobeRank: 6,
     tagline: "The language of the web. Runs in every browser and, via Node.js, on servers too.",
     difficulty: "Beginner",
     tags: ["web", "beginner-friendly", "career"],
@@ -215,6 +217,7 @@ const LANGUAGES = [
   {
     id: "typescript",
     name: "TypeScript",
+    tiobeRank: null,
     tagline: "JavaScript with a safety net — adds types that catch bugs before you run the code.",
     difficulty: "Moderate",
     tags: ["web", "career"],
@@ -233,6 +236,7 @@ const LANGUAGES = [
   {
     id: "java",
     name: "Java",
+    tiobeRank: 4,
     tagline: "Verbose but rock-solid. Runs banks, Android apps, and half the enterprise world.",
     difficulty: "Moderate",
     tags: ["mobile", "career", "enterprise"],
@@ -252,6 +256,7 @@ const LANGUAGES = [
   {
     id: "csharp",
     name: "C#",
+    tiobeRank: 5,
     tagline: "Microsoft's flagship language — game dev with Unity, desktop apps, and enterprise backends.",
     difficulty: "Moderate",
     tags: ["games", "desktop", "career", "enterprise"],
@@ -268,6 +273,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "cpp",
     name: "C++",
+    tiobeRank: 3,
     tagline: "Maximum control and speed. Powers game engines, browsers, and performance-critical systems.",
     difficulty: "Steep",
     tags: ["games", "systems", "performance"],
@@ -285,6 +291,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "c",
     name: "C",
+    tiobeRank: 2,
     tagline: "The bedrock of modern computing. Understand C and you understand how computers actually work.",
     difficulty: "Steep",
     tags: ["systems", "performance"],
@@ -302,6 +309,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "go",
     name: "Go",
+    tiobeRank: 14,
     tagline: "Simple syntax, built-in concurrency, fast compiles. A favorite for backend and cloud infrastructure.",
     difficulty: "Moderate",
     tags: ["web", "systems", "career"],
@@ -320,6 +328,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "rust",
     name: "Rust",
+    tiobeRank: 10,
     tagline: "C++-level performance with a compiler that refuses to let you write memory-unsafe code.",
     difficulty: "Steep",
     tags: ["systems", "performance", "career"],
@@ -337,6 +346,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "swift",
     name: "Swift",
+    tiobeRank: 17,
     tagline: "Apple's language for building iOS, iPadOS, and macOS apps.",
     difficulty: "Moderate",
     tags: ["mobile", "career"],
@@ -355,6 +365,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "kotlin",
     name: "Kotlin",
+    tiobeRank: 28,
     tagline: "The modern, official language for Android development. Also runs anywhere Java does.",
     difficulty: "Moderate",
     tags: ["mobile", "career"],
@@ -374,6 +385,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "dart",
     name: "Dart / Flutter",
+    tiobeRank: null,
     tagline: "Google's language + framework for building one app that runs on iOS, Android, web, and desktop.",
     difficulty: "Moderate",
     tags: ["mobile", "web"],
@@ -394,6 +406,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "php",
     name: "PHP",
+    tiobeRank: 13,
     tagline: "Powers a huge share of the web (including WordPress). Unglamorous, extremely employable.",
     difficulty: "Beginner",
     tags: ["web", "career"],
@@ -411,6 +424,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "ruby",
     name: "Ruby",
+    tiobeRank: 16,
     tagline: "Designed for programmer happiness. Clean syntax, and the backbone of the Ruby on Rails framework.",
     difficulty: "Beginner",
     tags: ["web", "beginner-friendly"],
@@ -428,6 +442,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "sql",
     name: "SQL",
+    tiobeRank: 8,
     tagline: "Not a general-purpose language, but essential: how you talk to almost every database.",
     difficulty: "Beginner",
     tags: ["data", "career"],
@@ -447,6 +462,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "r",
     name: "R",
+    tiobeRank: 9,
     tagline: "Built by and for statisticians. Deep roots in academia, research, and statistical analysis.",
     difficulty: "Moderate",
     tags: ["data", "ai"],
@@ -467,6 +483,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "lua",
     name: "Lua",
+    tiobeRank: null,
     tagline: "A tiny, fast scripting language embedded inside bigger programs — best known as how Roblox games are built.",
     difficulty: "Beginner",
     tags: ["games", "automation", "beginner-friendly"],
@@ -487,6 +504,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "bash",
     name: "Bash / Shell",
+    tiobeRank: null,
     tagline: "The scripting glue of every Unix system — a few lines here save you hours of repetitive manual work.",
     difficulty: "Beginner",
     tags: ["automation", "systems", "beginner-friendly"],
@@ -504,6 +522,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "scala",
     name: "Scala",
+    tiobeRank: null,
     tagline: "Java's JVM power meets functional programming — the language behind Spark and a lot of big-data infrastructure.",
     difficulty: "Steep",
     tags: ["data", "enterprise", "career"],
@@ -521,6 +540,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "elixir",
     name: "Elixir",
+    tiobeRank: null,
     tagline: "Built for systems that can't go down — a concurrent, fault-tolerant language behind Discord's real-time infrastructure.",
     difficulty: "Moderate",
     tags: ["web", "career"],
@@ -540,6 +560,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "julia",
     name: "Julia",
+    tiobeRank: 26,
     tagline: "Reads almost like Python, runs almost like C — built specifically for fast numerical and scientific computing.",
     difficulty: "Moderate",
     tags: ["data", "ai", "performance"],
@@ -561,6 +582,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "zig",
     name: "Zig",
+    tiobeRank: null,
     tagline: "A modern, minimal alternative to C — full manual control over memory, without decades of historical baggage.",
     difficulty: "Steep",
     tags: ["systems", "performance"],
@@ -577,6 +599,7 @@ Console.<span class="code-fn">WriteLine</span>(file.<span class="code-fn">ReadLi
   {
     id: "solidity",
     name: "Solidity",
+    tiobeRank: null,
     tagline: "The language of Ethereum smart contracts — code that moves real money, so mistakes are genuinely expensive.",
     difficulty: "Moderate",
     tags: ["career", "blockchain"],
@@ -767,6 +790,53 @@ askInput.addEventListener("keydown", (e) => {
 });
 
 /* ---------------------------------------------------------
+   Common project ideas — same matchGoal() engine as "Just ask",
+   just pre-picked so people can browse instead of typing.
+--------------------------------------------------------- */
+const PROJECT_IDEAS = [
+  { label: "Calculator", phrase: "a calculator" },
+  { label: "Portfolio website", phrase: "a portfolio website" },
+  { label: "Discord bot", phrase: "a Discord bot" },
+  { label: "2D video game", phrase: "a 2D video game" },
+  { label: "Roblox game", phrase: "a Roblox game" },
+  { label: "Android app", phrase: "an Android app" },
+  { label: "iOS app", phrase: "an iOS app" },
+  { label: "Cross-platform app", phrase: "a Flutter app" },
+  { label: "Backup automation script", phrase: "a bash script that backs up files" },
+  { label: "Machine learning model", phrase: "a machine learning model" },
+  { label: "REST API backend", phrase: "a REST API backend" },
+  { label: "Database reporting", phrase: "database queries for a report" },
+  { label: "WordPress site", phrase: "a WordPress site" },
+  { label: "Ruby on Rails app", phrase: "a Ruby on Rails app" },
+  { label: "Enterprise backend", phrase: "an enterprise Spring Boot app" },
+  { label: "Big data pipeline", phrase: "a big data pipeline with Spark" },
+  { label: "Smart contract", phrase: "a smart contract" },
+  { label: "Embedded/Arduino project", phrase: "an embedded Arduino project" }
+];
+
+function renderIdeaChips() {
+  const el = document.getElementById("idea-chips");
+  el.innerHTML = PROJECT_IDEAS.map(idea => {
+    const { scores } = matchGoal(idea.phrase);
+    const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const top = ranked.length ? LANGUAGES.find(l => l.id === ranked[0][0]) : null;
+    return `<button type="button" class="idea-chip" data-phrase="${escapeHtml(idea.phrase)}">
+      <span class="idea-chip-label">${idea.label}</span>
+      ${top ? `<span class="idea-chip-lang">${top.name}</span>` : ""}
+    </button>`;
+  }).join("");
+
+  el.querySelectorAll(".idea-chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const phrase = btn.dataset.phrase;
+      askInput.value = phrase;
+      renderAskResult(phrase);
+      document.getElementById("ask-result").scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+}
+
+/* ---------------------------------------------------------
    Quiz engine
 --------------------------------------------------------- */
 let currentStep = 0;
@@ -841,6 +911,278 @@ function resourceRow(r) {
   return `<a class="resource-link" href="${r.url}" target="_blank" rel="noopener noreferrer">
     ${r.label} <span class="rtype">${r.type}</span>
   </a>`;
+}
+
+const referenceGrid = document.getElementById("reference-grid");
+
+function renderReference() {
+  referenceGrid.innerHTML = LANGUAGES.map(l => {
+    const docs = l.resources.find(r => r.type === "Docs") || l.resources[0];
+    return `
+    <div class="card reference-card">
+      <div class="reference-card-top">
+        <h3>${l.name}</h3>
+        <span class="difficulty-pill difficulty-${l.difficulty}">${l.difficulty}</span>
+      </div>
+      ${l.example ? `<pre class="lang-example"><code>${l.example}</code></pre>` : ""}
+      ${resourceRow(docs)}
+    </div>
+  `;
+  }).join("");
+}
+
+const marketList = document.getElementById("market-list");
+const marketStatusText = document.getElementById("market-status-text");
+const marketRefreshBtn = document.getElementById("market-refresh-btn");
+
+/* ---------------------------------------------------------
+   Job market auto-update
+   The static tiobeRank fields on LANGUAGES are a snapshot from
+   when this feature was built (verified live against
+   tiobe.com/tiobe-index/ on 2026-08-17). To keep it current
+   without adding a backend, this reuses the same BYOK Gemini
+   key/setup as the "Ask the assistant" feature: if a key is
+   present and the cached data is more than 30 days old, it asks
+   Gemini (with Google Search grounding, so it's not just
+   guessing from training data) for the current TIOBE top 30 and
+   caches the result in localStorage. No key configured, or the
+   fetch fails? It silently falls back to the static snapshot —
+   never shows nothing, never fakes a "live" label it can't back up.
+--------------------------------------------------------- */
+const MARKET_CACHE_KEY = "marketData.tiobeCache";
+const MARKET_STALE_MS = 30 * 24 * 60 * 60 * 1000;
+
+const LANG_NAME_ALIASES = {
+  python: ["python"],
+  javascript: ["javascript", "js"],
+  typescript: ["typescript", "ts"],
+  java: ["java"],
+  csharp: ["c#", "csharp", "c sharp"],
+  cpp: ["c++", "cpp"],
+  c: ["c"],
+  go: ["go", "golang"],
+  rust: ["rust"],
+  swift: ["swift"],
+  kotlin: ["kotlin"],
+  dart: ["dart"],
+  php: ["php"],
+  ruby: ["ruby"],
+  sql: ["sql"],
+  r: ["r"],
+  lua: ["lua"],
+  bash: ["bash", "shell", "bash/shell", "bash / shell"],
+  scala: ["scala"],
+  elixir: ["elixir"],
+  julia: ["julia"],
+  zig: ["zig"],
+  solidity: ["solidity"]
+};
+
+function matchLanguageId(rawName) {
+  const norm = String(rawName || "").trim().toLowerCase();
+  for (const [id, aliases] of Object.entries(LANG_NAME_ALIASES)) {
+    if (aliases.includes(norm)) return id;
+  }
+  return null;
+}
+
+function getMarketCache() {
+  try { return JSON.parse(safeGet(MARKET_CACHE_KEY)); } catch { return null; }
+}
+
+function currentMarketRanks() {
+  const cache = getMarketCache();
+  if (cache && cache.ranks) return cache;
+  return { ranks: Object.fromEntries(LANGUAGES.map(l => [l.id, l.tiobeRank])), updatedAt: null, live: false };
+}
+
+function renderMarket() {
+  const { ranks, updatedAt, live } = currentMarketRanks();
+  const withRank = LANGUAGES.map(l => ({ l, rank: ranks[l.id] ?? null }));
+  const ranked = withRank.filter(x => x.rank).sort((a, b) => a.rank - b.rank);
+  const unranked = withRank.filter(x => !x.rank).map(x => x.l);
+
+  marketList.innerHTML = `
+    <div class="market-ranked">
+      ${ranked.map(({ l, rank }) => `
+        <a class="market-row" href="#lang-${l.id}">
+          <span class="market-rank">#${rank}</span>
+          <span class="market-name">${l.name}</span>
+          <span class="market-bar"><span class="market-bar-fill" style="width:${Math.max(6, 100 - (rank - 1) * 3)}%"></span></span>
+        </a>
+      `).join("")}
+    </div>
+    ${unranked.length ? `
+      <p class="market-unranked-label">Not yet in TIOBE's top 30 &mdash; still real, still worth learning if it fits your goal:</p>
+      <div class="market-unranked">
+        ${unranked.map(l => `<a class="alt-chip" href="#lang-${l.id}">${l.name} &rarr;</a>`).join("")}
+      </div>
+    ` : ""}
+  `;
+
+  marketList.querySelectorAll("a[href^='#lang-']").forEach(a => {
+    a.addEventListener("click", () => {
+      setTimeout(() => {
+        const id = a.getAttribute("href").slice(1);
+        const card = document.getElementById(id);
+        if (card) card.classList.add("expanded");
+      }, 300);
+    });
+  });
+
+  renderMarketStatus(updatedAt, live);
+}
+
+function renderMarketStatus(updatedAt, live) {
+  const hasKey = !!(GEMINI_CONFIG_KEY || safeGet(GEMINI_KEY_STORAGE));
+  const dateStr = updatedAt
+    ? new Date(updatedAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
+    : "Aug 17, 2026";
+
+  if (live) {
+    marketStatusText.innerHTML = `Live via Gemini + Google Search &middot; checked ${dateStr}`;
+  } else if (hasKey) {
+    marketStatusText.innerHTML = `Static snapshot &middot; ${dateStr} &middot; auto-checks for a live update when you view this section`;
+  } else {
+    marketStatusText.innerHTML = `Static snapshot &middot; ${dateStr} &middot; add a free Gemini key in <a href="#assistant">Ask the assistant</a> to enable live monthly updates`;
+  }
+  marketRefreshBtn.classList.toggle("hidden", !hasKey);
+}
+
+function parseMarketGeminiResponse(text) {
+  let raw = String(text || "").trim();
+  const fence = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fence) raw = fence[1].trim();
+  const arrayMatch = raw.match(/\[[\s\S]*\]/);
+  if (arrayMatch) raw = arrayMatch[0];
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return null;
+  }
+  if (!Array.isArray(parsed) || parsed.length < 8) return null;
+
+  const ranks = {};
+  parsed.forEach(entry => {
+    const rank = Number(entry && entry.rank);
+    const id = entry && matchLanguageId(entry.language);
+    if (id && Number.isFinite(rank) && rank > 0) {
+      if (!ranks[id] || rank < ranks[id]) ranks[id] = rank;
+    }
+  });
+  if (Object.keys(ranks).length < 5) return null;
+
+  LANGUAGES.forEach(l => { if (!(l.id in ranks)) ranks[l.id] = null; });
+  return ranks;
+}
+
+async function fetchMarketUpdate() {
+  const apiKey = GEMINI_CONFIG_KEY || safeGet(GEMINI_KEY_STORAGE);
+  if (!apiKey) return;
+
+  marketRefreshBtn.disabled = true;
+  marketStatusText.textContent = "Checking TIOBE for the latest rankings…";
+
+  const prompt = `Using Google Search, look up the current TIOBE Index at https://www.tiobe.com/tiobe-index/ and find its top 30 programming language ranking table.
+Reply with ONLY a raw JSON array (no markdown fences, no prose, no explanation) in exactly this shape:
+[{"rank":1,"language":"Python"},{"rank":2,"language":"C"}, ...]
+Use TIOBE's exact rank numbers and language names for as many of the top 30 as you can verify from the actual page. Do not invent or guess ranks.`;
+
+  try {
+    const result = await callGemini(apiKey, "You are a precise data-extraction tool. You only output what's asked for, nothing else.", [{ role: "user", parts: [{ text: prompt }] }], true);
+    if (result.blocked || !result.text) throw new Error("No response");
+    const ranks = parseMarketGeminiResponse(result.text);
+    if (!ranks) throw new Error("Couldn't parse a valid ranking from the response");
+
+    setMarketCacheData(ranks, true);
+  } catch (err) {
+    console.error("Market auto-update failed:", err);
+  } finally {
+    marketRefreshBtn.disabled = false;
+    renderMarket();
+  }
+}
+
+function setMarketCacheData(ranks, live) {
+  safeSet(MARKET_CACHE_KEY, JSON.stringify({ ranks, updatedAt: new Date().toISOString(), live }));
+}
+
+marketRefreshBtn.addEventListener("click", () => fetchMarketUpdate());
+
+function maybeAutoUpdateMarket() {
+  const apiKey = GEMINI_CONFIG_KEY || safeGet(GEMINI_KEY_STORAGE);
+  if (!apiKey) return;
+  const cache = getMarketCache();
+  const isStale = !cache || !cache.updatedAt || (Date.now() - new Date(cache.updatedAt).getTime()) > MARKET_STALE_MS;
+  if (isStale) fetchMarketUpdate();
+}
+
+const FAQS = [
+  {
+    q: "Which language should I actually learn first?",
+    a: "For most beginners: Python (readable, huge ecosystem, great for data/AI/scripting) or JavaScript (if you want to see things happen in a browser immediately). Both are forgiving, both are hugely employable, and neither locks you out of anything later. Use the quiz above if you want a specific answer for your goal."
+  },
+  {
+    q: "Is PHP dead?",
+    a: "No. It still powers a huge share of the web (WordPress alone runs on PHP and is roughly 40% of all websites), gets regular language updates, and is unglamorous but consistently employable. \"PHP is dead\" has been said every year since about 2005."
+  },
+  {
+    q: "Do I need to learn C before Python?",
+    a: "No. That's a leftover from CS-degree curricula that start low-level on purpose. If your goal is to build things, start with whatever fits your goal &mdash; usually Python or JavaScript. Learn C later if you get curious about how memory and computers actually work, not as a prerequisite."
+  },
+  {
+    q: "Is JavaScript the same as Java?",
+    a: "No, they're unrelated beyond the name (a 1995 marketing decision to ride Java's popularity). Java is a statically-typed, compiled-to-bytecode language for backends/Android/enterprise. JavaScript is the dynamic scripting language that runs in every browser. Different syntax, different runtimes, different jobs."
+  },
+  {
+    q: "Will AI replace programmers, so is learning to code still worth it?",
+    a: "AI tools are very good at writing code from a clear spec &mdash; they're much weaker at deciding what to build, debugging a system they didn't design, or judging whether generated code is actually correct and secure. Those skills still require understanding the language underneath. Learning to code now means working faster with AI, not competing against it."
+  },
+  {
+    q: "Is Python too slow for real, production software?",
+    a: "For most applications, no &mdash; the bottleneck is almost never Python itself, it's I/O (network, disk, database). Where raw speed genuinely matters, Python code typically calls into C/C++/Rust underneath (this is exactly how NumPy, PyTorch, and most AI infrastructure work). Learn Python first; learn a faster language later only if you actually hit that wall."
+  },
+  {
+    q: "Should Rust be my first language?",
+    a: "Probably not. Rust's whole value is a compiler that refuses to let you write memory-unsafe code &mdash; which means it also refuses a lot of code a beginner would naturally write, before you have the mental model to understand why. It's an excellent second or third language once you already think in terms of ownership and lifetimes from experience in something else."
+  },
+  {
+    q: "How long does it actually take to learn a language?",
+    a: "Enough to build small real things: a few weeks of consistent practice, not months of passive video-watching. Enough to be comfortable and employable: 6&ndash;12 months of regularly building projects. Enough to feel like an expert: years &mdash; and that's true of every language, so don't wait for that bar before you start building."
+  },
+  {
+    q: "Is TypeScript just JavaScript with extra steps?",
+    a: "It's JavaScript plus a type checker that runs before your code does, catching a whole category of bugs (wrong argument types, typos in property names, null/undefined mistakes) at write-time instead of in production. On any codebase bigger than a weekend project, most teams consider that trade worth the extra syntax."
+  },
+  {
+    q: "Can I get a job knowing only one language?",
+    a: "Yes, especially to start &mdash; most jobs hire for depth in one primary stack (e.g. \"Python backend,\" \"React/TypeScript frontend\"). But almost every real job also involves SQL and a scripting/shell language on the side, and picking up a second language gets dramatically faster once you deeply know your first."
+  }
+];
+
+function renderFaq() {
+  const faqList = document.getElementById("faq-list");
+  faqList.innerHTML = FAQS.map((item, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button type="button" class="faq-question" aria-expanded="false">
+        <span>${item.q}</span>
+        <svg class="faq-question-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      </button>
+      <div class="faq-answer"><p>${item.a}</p></div>
+    </div>
+  `).join("");
+
+  faqList.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".faq-item");
+      const isOpen = item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
 }
 
 function shareButtonHtml(id) {
@@ -1133,10 +1475,30 @@ function renderProgress() {
   const pct = Math.round((doneCount / items.length) * 100);
   const startedDate = new Date(p.startedAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 
+  const itemsByKey = Object.fromEntries(items.map(it => [it.key, it]));
+  const keyOfType = (...types) => lang.resources
+    .map((r, i) => ({ key: `resource-${i}`, type: r.type }))
+    .filter(x => types.includes(x.type))
+    .map(x => x.key);
+  const docKeys = keyOfType("Docs");
+  const courseKeys = keyOfType("Free course", "Interactive course", "Course");
+  const realProjectKeys = keyOfType("Real project");
+  const usedKeys = new Set([...docKeys, ...courseKeys, ...realProjectKeys]);
+  const leftoverKeys = items.map(it => it.key).filter(k => k.startsWith("resource-") && !usedKeys.has(k));
+
+  const weeks = [
+    { title: "Week 1 · Learn the fundamentals", keys: docKeys },
+    { title: "Week 2 · Practice with structure", keys: [...courseKeys, ...leftoverKeys] },
+    { title: "Week 3 · Build your first project", keys: ["project"] },
+    { title: "Week 4 · Go deeper", keys: realProjectKeys }
+  ].filter(w => w.keys.length);
+
+  let firstUnfinishedFound = false;
+
   progressCard.innerHTML = `
     <div class="progress-head">
       <div>
-        <div class="progress-eyebrow">Currently learning</div>
+        <div class="progress-eyebrow">Your roadmap</div>
         <h3 class="progress-lang-name">${lang.name}</h3>
         <p class="progress-started">Started ${startedDate}</p>
       </div>
@@ -1144,13 +1506,29 @@ function renderProgress() {
     </div>
     <div class="progress-bar-track"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
     <p class="progress-pct">${doneCount} of ${items.length} done (${pct}%)</p>
-    <div class="progress-checklist">
-      ${items.map(it => `
-        <label class="progress-item">
-          <input type="checkbox" data-key="${it.key}" ${p.checkedKeys.includes(it.key) ? "checked" : ""}>
-          <span>${it.label}</span>
-        </label>
-      `).join("")}
+    <div class="roadmap">
+      ${weeks.map(week => {
+        const weekDone = week.keys.filter(k => p.checkedKeys.includes(k)).length;
+        const weekComplete = weekDone === week.keys.length;
+        const isCurrent = !weekComplete && !firstUnfinishedFound;
+        if (isCurrent) firstUnfinishedFound = true;
+        return `
+        <div class="roadmap-week ${weekComplete ? "is-done" : ""} ${isCurrent ? "is-current" : ""}">
+          <div class="roadmap-week-head">
+            <span class="roadmap-week-title">${week.title}</span>
+            <span class="roadmap-week-status">${weekComplete ? "Done" : isCurrent ? "Up next" : `${weekDone}/${week.keys.length}`}</span>
+          </div>
+          <div class="progress-checklist">
+            ${week.keys.map(key => `
+              <label class="progress-item">
+                <input type="checkbox" data-key="${key}" ${p.checkedKeys.includes(key) ? "checked" : ""}>
+                <span>${itemsByKey[key].label}</span>
+              </label>
+            `).join("")}
+          </div>
+        </div>
+      `;
+      }).join("")}
     </div>
     ${pct === 100 ? `<p class="progress-complete">You've worked through everything here — nice work. Maybe it's time to pick your next language.</p>` : ""}
   `;
@@ -1751,11 +2129,210 @@ assistantInput.addEventListener("keydown", (e) => {
 });
 
 /* ---------------------------------------------------------
+   Live playground
+   Python runs via Pyodide (WebAssembly, loaded from a CDN on
+   first use). JavaScript runs in a sandboxed, script-only
+   iframe so it can't touch this page or the network. Every
+   other language links out to its own free, official web
+   playground instead of faking execution we can't deliver.
+--------------------------------------------------------- */
+const PLAYGROUND_STARTERS = {
+  python: `def recommend(goal):
+    if "web" in goal:
+        return "JavaScript"
+    if "data" in goal or "ai" in goal:
+        return "Python"
+    return "it depends"
+
+print(recommend("I want to build a website"))
+`,
+  javascript: `function recommend(goal) {
+  if (goal.includes("web")) return "JavaScript";
+  if (goal.includes("data") || goal.includes("ai")) return "Python";
+  return "it depends";
+}
+
+console.log(recommend("I want to build a website"));
+`
+};
+
+const PLAYGROUND_LINKS = {
+  typescript: { label: "TypeScript Playground", url: "https://www.typescriptlang.org/play" },
+  go: { label: "Go Playground", url: "https://go.dev/play/" },
+  rust: { label: "Rust Playground", url: "https://play.rust-lang.org/" },
+  dart: { label: "DartPad", url: "https://dartpad.dev/" },
+  kotlin: { label: "Kotlin Playground", url: "https://play.kotlinlang.org/" },
+  swift: { label: "SwiftFiddle", url: "https://swiftfiddle.com/" },
+  lua: { label: "Official Lua demo", url: "https://www.lua.org/demo.html" },
+  scala: { label: "Scastie", url: "https://scastie.scala-lang.org/" },
+  java: { label: "OnlineGDB", url: "https://www.onlinegdb.com/online_java_compiler" },
+  c: { label: "OnlineGDB", url: "https://www.onlinegdb.com/online_c_compiler" },
+  cpp: { label: "Compiler Explorer", url: "https://godbolt.org/" },
+  csharp: { label: "OnlineGDB", url: "https://www.onlinegdb.com/" },
+  ruby: { label: "OnlineGDB", url: "https://www.onlinegdb.com/" },
+  php: { label: "OnlineGDB", url: "https://www.onlinegdb.com/" },
+  r: { label: "webR — R in the browser", url: "https://webr.r-wasm.org/latest/" },
+  solidity: { label: "Remix — Ethereum IDE", url: "https://remix.ethereum.org/" }
+};
+
+function renderPlaygroundLinks() {
+  const el = document.getElementById("playground-links");
+  el.innerHTML = LANGUAGES
+    .filter(l => PLAYGROUND_LINKS[l.id])
+    .map(l => {
+      const link = PLAYGROUND_LINKS[l.id];
+      return `<a class="playground-link" href="${link.url}" target="_blank" rel="noopener noreferrer">${l.name} <span class="rtype">${link.label}</span></a>`;
+    })
+    .join("");
+}
+
+const playgroundTabs = document.querySelectorAll(".playground-tab");
+const playgroundCodeEl = document.getElementById("playground-code");
+const playgroundRunBtn = document.getElementById("playground-run-btn");
+const playgroundStatus = document.getElementById("playground-status");
+const playgroundOutput = document.getElementById("playground-output");
+
+let playgroundLang = "python";
+let pyodideInstance = null;
+let pyodideLoadingPromise = null;
+
+playgroundCodeEl.value = PLAYGROUND_STARTERS[playgroundLang];
+
+playgroundTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    playgroundTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    playgroundLang = tab.dataset.lang;
+    playgroundCodeEl.value = PLAYGROUND_STARTERS[playgroundLang];
+    playgroundOutput.textContent = "Output will show up here.";
+    playgroundOutput.classList.remove("is-error");
+    playgroundStatus.textContent = "";
+  });
+});
+
+function loadPyodideOnce() {
+  if (pyodideInstance) return Promise.resolve(pyodideInstance);
+  if (pyodideLoadingPromise) return pyodideLoadingPromise;
+
+  pyodideLoadingPromise = (async () => {
+    playgroundStatus.textContent = "Loading the Python runtime (first run only)…";
+    if (!window.loadPyodide) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/pyodide/v314.0.4/full/pyodide.js";
+        script.onload = resolve;
+        script.onerror = () => reject(new Error("Couldn't load the Python runtime — check your connection."));
+        document.head.appendChild(script);
+      });
+    }
+    pyodideInstance = await window.loadPyodide();
+    playgroundStatus.textContent = "";
+    return pyodideInstance;
+  })();
+
+  return pyodideLoadingPromise;
+}
+
+async function runPython(code) {
+  const pyodide = await loadPyodideOnce();
+  const out = [];
+  pyodide.setStdout({ batched: (msg) => out.push(msg) });
+  pyodide.setStderr({ batched: (msg) => out.push(msg) });
+  try {
+    await pyodide.runPythonAsync(code);
+    return { ok: true, text: out.join("\n") || "(ran with no output)" };
+  } catch (err) {
+    return { ok: false, text: (out.length ? out.join("\n") + "\n" : "") + String(err) };
+  }
+}
+
+function runJavaScript(code) {
+  return new Promise((resolve) => {
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.sandbox = "allow-scripts";
+
+    // A private MessageChannel, not the shared window "message" event —
+    // other scripts on the page (e.g. Pyodide, once loaded, holds onto the
+    // global message event in a way that can starve a plain
+    // window.addEventListener("message", ...) listener here) can't observe
+    // or interfere with a channel's own ports.
+    const channel = new MessageChannel();
+
+    let done = false;
+    const finish = (result) => {
+      if (done) return;
+      done = true;
+      channel.port1.onmessage = null;
+      clearTimeout(timer);
+      iframe.remove();
+      resolve(result);
+    };
+
+    channel.port1.onmessage = (e) => finish(e.data);
+
+    const timer = setTimeout(() => {
+      finish({ ok: false, text: "Timed out — check for an infinite loop." });
+    }, 5000);
+
+    const safeCode = code.replace(/<\/script/gi, "<\\/script");
+    iframe.srcdoc = `<!DOCTYPE html><html><body><script>
+      window.onmessage = function (e) {
+        const port = e.ports[0];
+        const logs = [];
+        const push = (...args) => logs.push(args.map(a => {
+          try { return typeof a === "string" ? a : JSON.stringify(a); } catch { return String(a); }
+        }).join(" "));
+        console.log = (...a) => push(...a);
+        console.error = (...a) => push(...a);
+        console.warn = (...a) => push(...a);
+        console.info = (...a) => push(...a);
+        try {
+          ${safeCode}
+          port.postMessage({ ok: true, text: logs.join("\\n") || "(ran with no output)" });
+        } catch (err) {
+          port.postMessage({ ok: false, text: (logs.length ? logs.join("\\n") + "\\n" : "") + err.message });
+        }
+      };
+    <\/script></body></html>`;
+
+    iframe.onload = () => {
+      iframe.contentWindow.postMessage("start", "*", [channel.port2]);
+    };
+
+    document.body.appendChild(iframe);
+  });
+}
+
+playgroundRunBtn.addEventListener("click", async () => {
+  playgroundOutput.classList.remove("is-error");
+  playgroundOutput.textContent = "Running…";
+  playgroundRunBtn.disabled = true;
+  const code = playgroundCodeEl.value;
+  try {
+    const result = playgroundLang === "python" ? await runPython(code) : await runJavaScript(code);
+    playgroundOutput.textContent = result.text;
+    playgroundOutput.classList.toggle("is-error", !result.ok);
+  } catch (err) {
+    playgroundOutput.textContent = String(err);
+    playgroundOutput.classList.add("is-error");
+  } finally {
+    playgroundRunBtn.disabled = false;
+    if (playgroundStatus.textContent.startsWith("Loading")) playgroundStatus.textContent = "";
+  }
+});
+
+/* ---------------------------------------------------------
    Init
 --------------------------------------------------------- */
 renderStep();
+renderIdeaChips();
 renderTagFilters();
 renderLibrary();
+renderReference();
+renderMarket();
+renderFaq();
+renderPlaygroundLinks();
 renderComparePanel();
 renderProgress();
 refreshAssistantKeyUI();
@@ -1776,8 +2353,23 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(
   ".ask-card, .assistant-card, .quiz-card, .checker-card, .progress-card, " +
-  ".ask-section h2, .assistant-section h2, .checker-section h2, .progress-section h2, .library-section h2"
+  ".ask-section h2, .assistant-section h2, .checker-section h2, .progress-section h2, .library-section h2, .reference-section h2, " +
+  ".market-section h2, .playground-section h2, .faq-section h2, .playground-card"
 ).forEach(el => {
   el.classList.add("reveal");
   revealObserver.observe(el);
 });
+
+/* ---------------------------------------------------------
+   Only spend a Gemini call on the market data once someone
+   actually scrolls to that section — not on every page load.
+--------------------------------------------------------- */
+const marketAutoUpdateObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      marketAutoUpdateObserver.unobserve(entry.target);
+      maybeAutoUpdateMarket();
+    }
+  });
+}, { threshold: 0.2 });
+marketAutoUpdateObserver.observe(document.getElementById("market"));
