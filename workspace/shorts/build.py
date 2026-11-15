@@ -100,8 +100,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         text = " ".join(re.sub(r"[\[\]]", "", w) for _, w in chunk).upper()
         style = "Hit" if any(h in text.lower() for h in hot) else f"C{(i // 3) % 4}"
         # small pop-in scale animation on each chunk
-        ev.append(f"Dialogue: 0,{ts(st)},{ts(en)},{style},,0,0,0,,"
-                  f"{{\\fscx80\\fscy80\\t(0,90,\\fscx100\\fscy100)}}{text}")
+        boom = [e.lower() for e in clip.get("expand", [])]
+        if any(e in text.lower() for e in boom):
+            # joke punchline: burst to 160% then settle at 130%
+            anim = "{\\fscx60\\fscy60\\t(0,180,\\fscx160\\fscy160)\\t(180,420,\\fscx130\\fscy130)}"
+            style = "Hit"
+            en = max(en, st + 1.4)
+        else:
+            anim = "{\\fscx80\\fscy80\\t(0,90,\\fscx100\\fscy100)}"
+        ev.append(f"Dialogue: 0,{ts(st)},{ts(en)},{style},,0,0,0,,{anim}{text}")
         i += 3
     open(path, "w").write(head + "\n".join(ev) + "\n")
 

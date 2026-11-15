@@ -4,8 +4,8 @@ import build
 build.OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "final")
 # n: (title, slug, start, end, punch, fart_or_None, highlight words) — times are file-relative
 CL = {
- 1: ("I can't giddy up", "giddy_up", 0.5, 76, 72.3, 15.1, ["giddy", "idiot", "twice"]),
- 2: ("I'm going to END STREAM", "end_stream", 0, 80, 70.8, 11.9, ["end stream", "worked"]),
+ 1: ("I can't giddy up", "giddy_up", 0.5, 76, 72.3, None, ["giddy", "idiot", "twice"]),
+ 2: ("I'm going to END STREAM", "end_stream", 0, 80, 70.8, None, ["end stream", "worked"]),
  3: ("Fans found Jettism", "fans", 0, 50.5, 31.4, None, ["biggest fan", "picture", "screaming"]),
  4: ("Go back to pulling my pearl", "pull_my_pearl", 1.5, 60, 58.0, None, ["pearl", "useless", "dork", "cheap"]),
  5: ("I know EVERYTHING about you", "everything_about_you", 0, 66, 52.3, None, ["revenge", "trap", "pvp", "everything"]),
@@ -21,6 +21,6 @@ for n in map(int, sys.argv[1:]):
     a, b, p, f = o.get("start", a), o.get("end", b), o.get("punch", p), o.get("fart", f)
     import re
     words = [(w["s"], re.sub(r"(?i)\b(f)uck|(s)hit", lambda m: (m.group(1) or m.group(2)) + "***", w["w"])) for w in json.load(open(f"clip{n}.words.json"))]
-    c = dict(id=n, slug=slug, title=t, start=a, end=b, punch=p, fart=f, highlight=hl)
+    c = dict(id=n, slug=slug, title=t, start=a, end=b, punch=p, fart=f, highlight=hl, expand={1: ["giddy"], 2: ["end stream", "stream."]}.get(n, []))
     src = f"clip{n}.mp4"
     print(n, build.render(c, src, words), flush=True)
