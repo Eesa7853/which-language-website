@@ -105,7 +105,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             # joke punchline: burst to 160% then settle at 130%
             anim = "{\\fscx60\\fscy60\\t(0,180,\\fscx160\\fscy160)\\t(180,420,\\fscx130\\fscy130)}"
             style = "Hit"
-            en = max(en, st + 1.4)
+            if i + 3 >= len(sel):
+                en = max(en, st + 1.4)
         else:
             anim = "{\\fscx80\\fscy80\\t(0,90,\\fscx100\\fscy100)}"
         ev.append(f"Dialogue: 0,{ts(st)},{ts(en)},{style},,0,0,0,,{anim}{text}")

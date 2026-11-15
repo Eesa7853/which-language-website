@@ -21,6 +21,6 @@ for n in map(int, sys.argv[1:]):
     a, b, p, f = o.get("start", a), o.get("end", b), o.get("punch", p), o.get("fart", f)
     import re
     words = [(w["s"], re.sub(r"(?i)\b(f)uck|(s)hit", lambda m: (m.group(1) or m.group(2)) + "***", w["w"])) for w in json.load(open(f"clip{n}.words.json"))]
-    c = dict(id=n, slug=slug, title=t, start=a, end=b, punch=p, fart=f, highlight=hl, expand={1: ["giddy"], 2: ["end stream", "stream."]}.get(n, []))
+    c = dict(id=n, slug=slug, title=t, start=a, end=b, punch=p, fart=f, highlight=hl, expand={1: ["giddy"], 2: ["gonna end", "stream and"]}.get(n, []))
     src = f"clip{n}.mp4"
     print(n, build.render(c, src, words), flush=True)
