@@ -33,6 +33,9 @@ def make_sfx():
                     "aecho=0.6:0.5:60:0.3",
         # short pop for caption emphasis / laughs
         "pop.wav": "sine=f=900:d=0.08,afade=t=out:d=0.08,volume=0.6",
+        # comedic fart: low buzzy tone with a wobble, falling pitch, a bit of noise
+        "fart.wav": "aevalsrc='0.9*sin(2*PI*(95-30*t)*t)*(0.6+0.4*sin(2*PI*28*t))*(1+0.3*sin(2*PI*7*t))+0.15*(random(0)-0.5)':d=0.9:s=44100,"
+                    "lowpass=f=700,afade=t=in:d=0.03,afade=t=out:st=0.55:d=0.35,volume=2",
     }
     for name, flt in specs.items():
         p = os.path.join(SFX, name)
@@ -117,6 +120,12 @@ def render(clip, src, words, test=False):
         (["-i", f"{SFX}/pop.wav"] for _ in pops), [])
     mix = [f"[1:a]volume=0.8[w]", f"[2:a]adelay={int(punch*1000)}|{int(punch*1000)},volume=0.9[bm]"]
     labels = ["[a0]", "[w]", "[bm]"]
+    if clip.get("fart") is not None:
+        ft = int(max(0.0, clip["fart"] - clip["start"]) * 1000)
+        sfx_in += ["-i", f"{SFX}/fart.wav"]
+        k = 3 + len(pops)
+        mix.append(f"[{k}:a]adelay={ft}|{ft},volume=1.2[ft]")
+        labels.append("[ft]")
     for k, t in enumerate(pops):
         mix.append(f"[{3+k}:a]adelay={int(t*1000)}|{int(t*1000)}[p{k}]")
         labels.append(f"[p{k}]")

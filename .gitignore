@@ -16,3 +16,6 @@ workspace/shorts/clip_*.ass
 workspace/real/render.log
 __pycache__/
 workspace/jettism/*.srt
+workspace/jettism/real/*.mp4
+workspace/jettism/real/final/
+workspace/jettism/real/render.log
