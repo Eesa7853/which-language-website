@@ -19,3 +19,4 @@ workspace/jettism/*.srt
 workspace/jettism/real/*.mp4
 workspace/jettism/real/final/
 workspace/jettism/real/render.log
+workspace/jettism/real/render2.log
