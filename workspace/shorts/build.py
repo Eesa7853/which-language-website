@@ -76,8 +76,11 @@ PlayResY: 1920
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,DejaVu Sans,86,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
-Style: Hit,DejaVu Sans,86,&H0000E5FF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+Style: C0,DejaVu Sans,86,&H0000E5FF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+Style: C1,DejaVu Sans,86,&H0040FF5A,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+Style: C2,DejaVu Sans,86,&H00FFE600,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+Style: C3,DejaVu Sans,86,&H00B469FF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+Style: Hit,DejaVu Sans,96,&H003030FF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
 Style: Title,DejaVu Sans,72,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,-1,0,0,0,100,100,0,0,3,18,0,8,60,60,220,1
 
 [Events]
@@ -92,7 +95,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         en = sel[i + 3][0] if i + 3 < len(sel) else min(st + 1.5, b - a)
         en = max(en, st + 0.3)
         text = " ".join(re.sub(r"[\[\]]", "", w) for _, w in chunk).upper()
-        style = "Hit" if any(h in text.lower() for h in hot) else "Cap"
+        style = "Hit" if any(h in text.lower() for h in hot) else f"C{(i // 3) % 4}"
         # small pop-in scale animation on each chunk
         ev.append(f"Dialogue: 0,{ts(st)},{ts(en)},{style},,0,0,0,,"
                   f"{{\\fscx80\\fscy80\\t(0,90,\\fscx100\\fscy100)}}{text}")
