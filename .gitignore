@@ -13,3 +13,5 @@ workspace/real/*.mp4
 workspace/real/final/
 workspace/shorts/sfx/
 workspace/shorts/clip_*.ass
+workspace/real/render.log
+__pycache__/
