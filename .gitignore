@@ -9,3 +9,7 @@
 
 # Claude Code session state
 .claude/scheduled_tasks.lock
+workspace/real/*.mp4
+workspace/real/final/
+workspace/shorts/sfx/
+workspace/shorts/clip_*.ass
