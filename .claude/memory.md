@@ -1,6 +1,6 @@
 # Memory
 
-_Last updated: 2026-08-17_
+_Last updated: 2026-11-15_
 
 ## Project
 
@@ -52,6 +52,14 @@ _Last updated: 2026-08-17_
 - **Gemini key's Search grounding quota was exhausted** — degrades gracefully instead of failing.
 - **That Gemini key was pasted directly in chat early on** — flagged to the user to rotate/revoke it; unclear if they did.
 - `.gitignore` excludes `config.local.js`, `node_modules/`, `test-results/`, `playwright-report/`, and `.claude/scheduled_tasks.lock`.
+
+## DrDonut stream clipping (2026-11-15)
+
+- Goal: find funny moments in `https://www.youtube.com/live/FgbAodKMzL0` using the user's `funny-video-clipper` skill (transcribe, 5-8 moments of 15-60s, raw previews, then STOP for the user to pick before editing 9:16 captioned finals).
+- Cloud sandbox network blocks YouTube (proxy 403 on www.youtube.com, googlevideo.com, ytimg.com), even after the user said they allowed it in environment settings. Likely needs a new session or the right environment. Check before retrying.
+- Tried and failed: JustClip MCP, MakeMyClip editor, yt-dlp-mcp (all need YouTube/justclip.ai access); OpenClip plugin installed but its server also got proxy 403. Higgsfield `video_analysis_create` returned an unrelated 28s game ad - ignore, don't trust it.
+- `yt-dlp` and `faster-whisper` are pip-installed in that sandbox; `ffmpeg` present. Empty `workspace/` dir may exist at repo root.
+- Never invent clips/timestamps; if the video can't be fetched, say so. Fallbacks: user attaches mp4/audio, or captions via `yt-dlp --skip-download --write-auto-subs`.
 
 ## Working style notes
 
