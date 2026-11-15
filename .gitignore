@@ -15,3 +15,4 @@ workspace/shorts/sfx/
 workspace/shorts/clip_*.ass
 workspace/real/render.log
 __pycache__/
+workspace/jettism/*.srt
