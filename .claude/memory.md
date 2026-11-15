@@ -55,11 +55,12 @@ _Last updated: 2026-11-15_
 
 ## DrDonut stream clipping (2026-11-15)
 
-- Goal: find funny moments in `https://www.youtube.com/live/FgbAodKMzL0` using the user's `funny-video-clipper` skill (transcribe, 5-8 moments of 15-60s, raw previews, then STOP for the user to pick before editing 9:16 captioned finals).
-- Cloud sandbox network blocks YouTube (proxy 403 on www.youtube.com, googlevideo.com, ytimg.com), even after the user said they allowed it in environment settings. Likely needs a new session or the right environment. Check before retrying.
-- Tried and failed: JustClip MCP, MakeMyClip editor, yt-dlp-mcp (all need YouTube/justclip.ai access); OpenClip plugin installed but its server also got proxy 403. Higgsfield `video_analysis_create` returned an unrelated 28s game ad - ignore, don't trust it.
-- `yt-dlp` and `faster-whisper` are pip-installed in that sandbox; `ffmpeg` present. Empty `workspace/` dir may exist at repo root.
-- Never invent clips/timestamps; if the video can't be fetched, say so. Fallbacks: user attaches mp4/audio, or captions via `yt-dlp --skip-download --write-auto-subs`.
+- Goal: funny YouTube Shorts from `https://www.youtube.com/live/FgbAodKMzL0` (~4h DonutSMP stream) via the user's `funny-video-clipper` skill: find moments, show them, user picks, then 9:16 + captions + SFX.
+- 7 clips picked from auto-captions (times/titles in `workspace/shorts/clips.json`; transcript in `workspace/transcript.txt`): eye surgery 3:39:47, can't talk on stream 3:41:43, cried 2 hours 3:46:58, miss old Donut 3:36:58, robbing gambler 2:18:38, worst kit 2:24:05, get out my face 2:30:13.
+- Render pipeline: `workspace/shorts/build.py` (blurred bg + centered stream, title card, 3-word captions, punch zoom, synthesized whoosh/boom/pop, loudnorm). `python3 -I build.py SOURCE.mp4` or `--test`. Tested OK on dummy video.
+- Cloud sandbox can't get the video: YouTube bot-check/CAPTCHA blocks this server's IP (even with unrestricted network env "which-language-website (YouTube access)"). OpenClip (connected, free plan, 0 credits) pauses before downloading; Higgsfield import needs direct media URL; JustClip/MakeMyClip/yt-dlp-mcp/youtube-mcp all fail here. Don't retry those.
+- User downloaded the full stream on their Windows PC with yt-dlp (`drdonut.webm`, 10.6 GB, home folder). Next: they cut 7 clips with a PowerShell ffmpeg loop (each clip has 3s padding: starts = clips.json start-3) and attach `clip1-7.mp4`; then adapt build.py to per-clip files (seek 3s in) and render.
+- Never invent clips/timestamps or present mock-ups as real edits.
 
 ## Working style notes
 
