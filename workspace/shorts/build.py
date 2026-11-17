@@ -140,8 +140,8 @@ def render(clip, src, words, test=False):
     # Video: blurred full-frame background + centered sharp 16:9 frame (keeps the
     # streamer's facecam & game both visible), punch-in zoom at the punchline, captions.
     vf = (f"[0:v]split[bg][fg];"
-          f"[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=25:2,eq=brightness=-0.08[bgb];"
-          f"[fg]scale=1080:-2,"
+          f"[bg]fps=30,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=25:2,eq=brightness=-0.08[bgb];"
+          f"[fg]fps=30,scale=1080:-2,"
           f"zoompan=z='if(between(it,{punch:.2f},{punch+1.2:.2f}),1.18,1)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x608:fps=30[fgz];"
           f"[bgb][fgz]overlay=0:(H-h)/2-120,ass='{ass}'[v]")
     af = f"[0:a]loudnorm=I=-14:TP=-1.5:LRA=11[a0];" + ";".join(mix) + ";" + "".join(labels) + \
@@ -150,7 +150,7 @@ def render(clip, src, words, test=False):
     run(["ffmpeg", "-y", *seek, "-i", src, *sfx_in,
          "-filter_complex", vf + ";" + af, "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-preset", "fast", "-crf", "20", "-r", "30", "-pix_fmt", "yuv420p",
-         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out])
+         "-c:a", "aac", "-b:a", "192k", "-t", str(dur), "-movflags", "+faststart", out])
     return out
 
 
