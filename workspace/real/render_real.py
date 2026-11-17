@@ -4,7 +4,7 @@ import build
 build.OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "final")
 meta = {c["id"]: c for c in build.CLIPS}
 # file-relative trims & punchline times (from whisper word timings)
-plan = {3: (0, 62, 42), 4: (0, 60, 47), 5: (0, 66, 63), 6: (4, 63, 59), 7: (0, 44, 33)}
+plan = {3: (13, 63, 42), 4: (7.5, 57.5, 47), 5: (16, 66, 63), 6: (11.5, 61.5, 59.3), 7: (0, 44, 33)}  # all <= 50s
 build.make_sfx()
 for n in map(int, sys.argv[1:] or plan):
     a, b, p = plan[n]
