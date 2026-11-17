@@ -145,7 +145,7 @@ def render(clip, src, words, test=False):
           f"zoompan=z='if(between(it,{punch:.2f},{punch+1.2:.2f}),1.18,1)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x608:fps=30[fgz];"
           f"[bgb][fgz]overlay=0:(H-h)/2-120,ass='{ass}'[v]")
     af = f"[0:a]loudnorm=I=-14:TP=-1.5:LRA=11[a0];" + ";".join(mix) + ";" + "".join(labels) + \
-         f"amix=inputs={len(labels)}:normalize=0:duration=first,alimiter=limit=0.95[a]"
+         f"amix=inputs={len(labels)}:normalize=0:duration=longest,alimiter=limit=0.95,apad[a]"
     seek = ["-ss", str(0 if test else clip["start"]), "-t", str(dur)]
     run(["ffmpeg", "-y", *seek, "-i", src, *sfx_in,
          "-filter_complex", vf + ";" + af, "-map", "[v]", "-map", "[a]",
